@@ -3,9 +3,25 @@
   display: flex;
   align-items: center;
   padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/circuit.svg');
+  background-size: 70vw auto;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,11 +34,8 @@
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .hero-subtitle {

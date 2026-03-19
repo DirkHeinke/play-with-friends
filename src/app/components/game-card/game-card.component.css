@@ -3,7 +3,7 @@
   flex-direction: column;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   overflow: hidden;
   text-decoration: none;
   color: inherit;
@@ -12,8 +12,8 @@
 
 .card:hover {
   border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.15);
 }
 
 .card-image {
@@ -41,9 +41,9 @@
 
 .card-placeholder span {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--accent);
-  opacity: 0.5;
+  opacity: 0.4;
   text-transform: uppercase;
 }
 

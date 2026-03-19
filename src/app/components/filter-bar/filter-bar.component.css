@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  background: #0d2a35;
+  border: 1px solid #1a4a5a;
   border-radius: var(--radius-lg);
   padding: 1.25rem;
 }
@@ -11,11 +11,12 @@
 .search-input {
   width: 100%;
   padding: 0.65rem 1rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: #071518;
+  border: 1px solid #1a4a5a;
   border-radius: var(--radius);
   color: var(--text);
   font-size: 0.95rem;
+  font-family: inherit;
   outline: none;
   transition: border-color var(--transition);
 }
@@ -57,12 +58,14 @@
 
 .chip {
   padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 500;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
-  border: 1px solid var(--border);
-  background: var(--bg);
+  border: 1px solid #1a4a5a;
+  background: transparent;
   color: var(--text-muted);
   transition: border-color var(--transition), color var(--transition), background var(--transition);
 }
@@ -81,8 +84,8 @@
 .player-input {
   width: 80px;
   padding: 0.3rem 0.6rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: #071518;
+  border: 1px solid #1a4a5a;
   border-radius: var(--radius);
   color: var(--text);
   font-size: 0.85rem;
