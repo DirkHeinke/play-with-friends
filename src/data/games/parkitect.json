@@ -3,12 +3,26 @@
   "title": "Parkitect",
   "description": "A theme park management game with co-op multiplayer support. Build and manage your theme park together with friends.",
   "url": "https://themeparkitect.com/",
-  "players": { "min": 1, "max": 8, "softLimit": null },
+  "players": {
+    "min": 1,
+    "max": 8,
+    "softLimit": null
+  },
   "price": 25,
-  "duration": ["long"],
-  "platforms": ["windows", "linux", "macos"],
-  "multiplayerType": ["remote"],
-  "tags": ["co-op"],
+  "duration": [
+    "long"
+  ],
+  "platforms": [
+    "windows",
+    "linux",
+    "macos"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
+  "tags": [
+    "co-op"
+  ],
   "controls": [],
-  "image": null
+  "image": "/images/parkitect.webp"
 }

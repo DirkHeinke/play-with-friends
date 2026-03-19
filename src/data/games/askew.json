@@ -3,12 +3,22 @@
   "title": "Askew",
   "description": "A trivia game where players answer questions and vote on each other's answers. Fun for groups who want a mix of knowledge and opinion.",
   "url": "https://askew.app/",
-  "players": { "min": 4, "max": 10, "softLimit": null },
+  "players": {
+    "min": 4,
+    "max": 10,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/askew.webp"
 }

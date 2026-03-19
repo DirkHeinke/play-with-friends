@@ -3,12 +3,23 @@
   "title": "Gartic Phone",
   "description": "An online telephone game where players draw and guess each other's prompts. Great for large groups and hilarious results.",
   "url": "https://garticphone.com/",
-  "players": { "min": 2, "max": 30, "softLimit": null },
+  "players": {
+    "min": 2,
+    "max": 30,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short", "medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short",
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/gartic-phone.webp"
 }

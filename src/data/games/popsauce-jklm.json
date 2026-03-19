@@ -3,12 +3,23 @@
   "title": "PopSauce - jklm.fun",
   "description": "A pop culture guessing game on jklm.fun. Identify songs, movies, images and more in this trivia-style party game.",
   "url": "https://jklm.fun/",
-  "players": { "min": 2, "max": 12, "softLimit": true },
+  "players": {
+    "min": 2,
+    "max": 12,
+    "softLimit": true
+  },
   "price": 0,
-  "duration": ["short", "medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short",
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/popsauce-jklm.webp"
 }

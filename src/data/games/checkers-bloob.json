@@ -3,12 +3,22 @@
   "title": "Checkers - bloob.io",
   "description": "Classic checkers (draughts) online on bloob.io. Challenge a friend to a game of strategy.",
   "url": "https://bloob.io/checkers",
-  "players": { "min": 2, "max": 4, "softLimit": null },
+  "players": {
+    "min": 2,
+    "max": 4,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/checkers-bloob.webp"
 }

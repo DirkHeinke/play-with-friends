@@ -3,12 +3,22 @@
   "title": "Wordrace - bloob.io",
   "description": "A fast-paced word game on bloob.io. Race to find words on a letter grid before your opponents.",
   "url": "https://bloob.io/wordrace",
-  "players": { "min": 1, "max": 12, "softLimit": null },
+  "players": {
+    "min": 1,
+    "max": 12,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/wordrace-bloob.webp"
 }

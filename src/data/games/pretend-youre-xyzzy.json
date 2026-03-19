@@ -3,12 +3,22 @@
   "title": "Pretend You're Xyzzy",
   "description": "A free online Cards Against Humanity clone. Players take turns being the Card Czar and judging which answer card is funniest.",
   "url": "https://pyx-1.pretendyoure.xyz/",
-  "players": { "min": 3, "max": 20, "softLimit": null },
+  "players": {
+    "min": 3,
+    "max": 20,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/pretend-youre-xyzzy.webp"
 }

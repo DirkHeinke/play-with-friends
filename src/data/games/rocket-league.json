@@ -3,12 +3,23 @@
   "title": "Rocket League",
   "description": "Soccer meets rocket-powered cars. Play competitive or casual matches with friends in private rooms.",
   "url": "https://www.rocketleague.com/",
-  "players": { "min": 1, "max": 8, "softLimit": null },
+  "players": {
+    "min": 1,
+    "max": 8,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["medium"],
-  "platforms": ["windows"],
-  "multiplayerType": ["local", "remote"],
+  "duration": [
+    "medium"
+  ],
+  "platforms": [
+    "windows"
+  ],
+  "multiplayerType": [
+    "local",
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/rocket-league.webp"
 }

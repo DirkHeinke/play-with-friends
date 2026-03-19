@@ -3,12 +3,23 @@
   "title": "StopotS",
   "description": "An online categories game (similar to Stop/Scattergories). Players must fill in categories with words starting with a random letter before time runs out.",
   "url": "https://stopots.com/",
-  "players": { "min": 1, "max": 50, "softLimit": null },
+  "players": {
+    "min": 1,
+    "max": 50,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short", "medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short",
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/stopots.webp"
 }

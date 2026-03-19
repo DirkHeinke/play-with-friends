@@ -3,12 +3,22 @@
   "title": "Four in a Row - bloob.io",
   "description": "The classic Connect Four game online. Drop colored discs to get four in a row before your opponent on bloob.io.",
   "url": "https://bloob.io/fourinarow",
-  "players": { "min": 2, "max": 6, "softLimit": null },
+  "players": {
+    "min": 2,
+    "max": 6,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/four-in-a-row-bloob.webp"
 }

@@ -3,12 +3,22 @@
   "title": "Codenames",
   "description": "The official Codenames online game. Two teams compete to identify their agents using one-word clues in this popular word game.",
   "url": "https://codenames.game/",
-  "players": { "min": 2, "max": 10, "softLimit": true },
+  "players": {
+    "min": 2,
+    "max": 10,
+    "softLimit": true
+  },
   "price": 0,
-  "duration": ["medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/codenames.webp"
 }

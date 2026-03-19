@@ -3,12 +3,25 @@
   "title": "CouchSumo",
   "description": "A party game where players control sumo wrestlers using their smartphones as controllers. Push opponents off the platform to win.",
   "url": "https://couch-sumo.theoi.de/",
-  "players": { "min": 2, "max": 8, "softLimit": true },
+  "players": {
+    "min": 2,
+    "max": 8,
+    "softLimit": true
+  },
   "price": 0,
-  "duration": ["short"],
-  "platforms": ["web"],
-  "multiplayerType": ["local", "remote"],
+  "duration": [
+    "short"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "local",
+    "remote"
+  ],
   "tags": [],
-  "controls": ["smartphone-controller"],
-  "image": null
+  "controls": [
+    "smartphone-controller"
+  ],
+  "image": "/images/couch-sumo.webp"
 }

@@ -3,12 +3,23 @@
   "title": "Telewave",
   "description": "An online implementation of the Wavelength board game. Two teams compete to communicate concepts on a spectrum using clues.",
   "url": "https://gjeuken.github.io/telewave/",
-  "players": { "min": 2, "max": 12, "softLimit": true },
+  "players": {
+    "min": 2,
+    "max": 12,
+    "softLimit": true
+  },
   "price": 0,
-  "duration": ["medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["local", "remote"],
+  "duration": [
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "local",
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/telewave.webp"
 }

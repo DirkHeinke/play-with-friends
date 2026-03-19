@@ -3,12 +3,24 @@
   "title": "Hanab",
   "description": "An online implementation of the cooperative card game Hanabi. Work together to play cards in the correct order without seeing your own hand.",
   "url": "https://hanab.cards/",
-  "players": { "min": 2, "max": 5, "softLimit": null },
+  "players": {
+    "min": 2,
+    "max": 5,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["medium"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
-  "tags": ["co-op"],
+  "duration": [
+    "medium"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
+  "tags": [
+    "co-op"
+  ],
   "controls": [],
-  "image": null
+  "image": "/images/hanab.webp"
 }

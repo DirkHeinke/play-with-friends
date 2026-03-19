@@ -41,3 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 .playwright-cli/
+
+# Game images — originals are committed (source), optimized WebPs are generated at build time
+/public/images/*.webp

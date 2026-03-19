@@ -3,12 +3,22 @@
   "title": "Broken Picturephone",
   "description": "An online telephone pictionary game. Alternate between drawing and describing to create hilariously broken chains.",
   "url": "https://www.brokenpicturephone.com/",
-  "players": { "min": 2, "max": 8, "softLimit": null },
+  "players": {
+    "min": 2,
+    "max": 8,
+    "softLimit": null
+  },
   "price": 0,
-  "duration": ["short"],
-  "platforms": ["web"],
-  "multiplayerType": ["remote"],
+  "duration": [
+    "short"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [],
-  "image": null
+  "image": "/images/broken-picturephone.webp"
 }
