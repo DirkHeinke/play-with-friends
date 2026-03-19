@@ -1,0 +1,14 @@
+{
+  "slug": "the-votes-out",
+  "title": "The Vote's Out",
+  "description": "A party game where players vote on fun questions and see how their answers compare. Use your smartphone as a controller.",
+  "url": "https://votesout.com/",
+  "players": { "min": 3, "max": 12, "softLimit": null },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": [],
+  "tags": [],
+  "controls": ["smartphone-controller"],
+  "image": null
+}

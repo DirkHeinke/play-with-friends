@@ -1,0 +1,30 @@
+vmType: "vz"
+vmOpts:
+  vz:
+    rosetta:
+      enabled: true
+      binfmt: true
+images:
+  - location: "https://cloud-images.ubuntu.com/releases/24.04/release/ubuntu-24.04-server-cloudimg-amd64.img"
+    arch: "x86_64"
+  - location: "https://cloud-images.ubuntu.com/releases/24.04/release/ubuntu-24.04-server-cloudimg-arm64.img"
+    arch: "aarch64"
+cpus: 4
+memory: "6GiB"
+disk: "30GiB"
+mountType: "virtiofs"
+mounts:
+  - location: "/Users/dirkheinke/Documents/dev/opencode/test-2/playwithfriends"
+    writable: true
+    mountPoint: "/workspace"
+ssh:
+  loadDotSSHPubKeys: true
+provision:
+  - mode: system
+    script: |
+      #!/bin/bash
+      set -euxo pipefail
+      apt-get update
+      apt-get install -y ca-certificates curl git build-essential
+      curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+      apt-get install -y nodejs

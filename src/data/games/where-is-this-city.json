@@ -1,0 +1,14 @@
+{
+  "slug": "where-is-this-city",
+  "title": "Where Is This City?",
+  "description": "A geography guessing game where you try to identify cities from street-level images. Play with friends and compete for the highest score.",
+  "url": "https://witc.theoi.de/",
+  "players": { "min": 1, "max": 30, "softLimit": true },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

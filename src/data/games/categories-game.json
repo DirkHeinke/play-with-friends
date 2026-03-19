@@ -1,0 +1,14 @@
+{
+  "slug": "categories-game",
+  "title": "Categories game",
+  "description": "An online Scattergories-style game. Come up with words in various categories that start with a specific letter before your opponents.",
+  "url": "https://scattergoriesonline.net/",
+  "players": { "min": 2, "max": 45, "softLimit": null },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

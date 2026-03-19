@@ -1,0 +1,14 @@
+{
+  "slug": "broforce",
+  "title": "Broforce",
+  "description": "An action platformer with intense co-op multiplayer. Play as action movie heroes and liberate the world from evil together.",
+  "url": "https://broforcegame.com/",
+  "players": { "min": 1, "max": 4, "softLimit": null },
+  "price": 15,
+  "duration": ["long"],
+  "platforms": ["windows", "macos", "linux"],
+  "multiplayerType": ["local", "remote"],
+  "tags": ["co-op"],
+  "controls": [],
+  "image": null
+}

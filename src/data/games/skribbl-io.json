@@ -1,0 +1,14 @@
+{
+  "slug": "skribbl-io",
+  "title": "skribbl.io",
+  "description": "A free multiplayer drawing and guessing game. One player draws a word while others try to guess it for points.",
+  "url": "https://skribbl.io/",
+  "players": { "min": 2, "max": 12, "softLimit": null },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

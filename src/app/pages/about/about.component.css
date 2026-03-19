@@ -1,0 +1,31 @@
+.about-page {
+  padding: 4rem 1.5rem;
+  max-width: 720px;
+}
+
+.about-page h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.about-content a {
+  color: var(--accent);
+}
+
+.about-content a:hover {
+  color: var(--accent-hover);
+}

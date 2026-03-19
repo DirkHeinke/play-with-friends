@@ -1,0 +1,94 @@
+@if (game) {
+  <div class="container detail-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a routerLink="/">Home</a>
+      <span>/</span>
+      <a routerLink="/games">Games</a>
+      <span>/</span>
+      <span>{{ game.title }}</span>
+    </nav>
+
+    <div class="detail-layout">
+      <div class="detail-image-col">
+        @if (game.image) {
+          <img class="detail-image" [src]="game.image" [alt]="game.title" />
+        } @else {
+          <div class="detail-placeholder">
+            <span>{{ game.title[0] }}</span>
+          </div>
+        }
+
+        <a class="btn btn-primary play-btn" [href]="game.url" target="_blank" rel="noopener noreferrer">
+          Play {{ game.title }}
+        </a>
+      </div>
+
+      <div class="detail-info">
+        <h1 class="detail-title">{{ game.title }}</h1>
+
+        @if (game.description) {
+          <p class="detail-description">{{ game.description }}</p>
+        }
+
+        <div class="detail-meta">
+          <div class="meta-row">
+            <span class="meta-label">Players</span>
+            <span class="meta-value">{{ playersLabel }}</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Duration</span>
+            <span class="meta-value">{{ durationLabel }}</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value" [class]="priceCssClass">{{ priceLabel }}</span>
+          </div>
+        </div>
+
+        <div class="detail-tags">
+          <div class="tag-group">
+            <span class="tag-group-label">Platforms</span>
+            <div class="tags">
+              @for (platform of game.platforms; track platform) {
+                <span class="tag" [class]="'platform-' + platform">{{ platform }}</span>
+              }
+            </div>
+          </div>
+
+          @if (game.multiplayerType.length > 0) {
+            <div class="tag-group">
+              <span class="tag-group-label">Multiplayer</span>
+              <div class="tags">
+                @for (type of game.multiplayerType; track type) {
+                  <span class="tag" [class]="'type-' + type">{{ type }}</span>
+                }
+              </div>
+            </div>
+          }
+
+          @if (game.tags.length > 0) {
+            <div class="tag-group">
+              <span class="tag-group-label">Features</span>
+              <div class="tags">
+                @for (tag of game.tags; track tag) {
+                  <span class="tag tag-coop">{{ tag }}</span>
+                }
+              </div>
+            </div>
+          }
+
+          @if (game.controls.length > 0) {
+            <div class="tag-group">
+              <span class="tag-group-label">Controls</span>
+              <div class="tags">
+                @for (ctrl of game.controls; track ctrl) {
+                  <span class="tag control-smartphone">{{ ctrl }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

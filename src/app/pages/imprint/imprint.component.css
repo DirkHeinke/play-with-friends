@@ -1,0 +1,40 @@
+.imprint-page {
+  padding: 4rem 1.5rem;
+  max-width: 720px;
+}
+
+.imprint-page h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+}
+
+.imprint-section {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imprint-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.imprint-section p,
+.imprint-section address {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.imprint-section a {
+  color: var(--accent);
+}
+
+.imprint-section a:hover {
+  color: var(--accent-hover);
+}

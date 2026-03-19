@@ -1,0 +1,14 @@
+{
+  "slug": "playingcards-io",
+  "title": "PlayingCards.io",
+  "description": "A virtual tabletop for playing card games online. Play classic card games or create custom games with friends.",
+  "url": "https://playingcards.io/",
+  "players": { "min": 1, "max": 12, "softLimit": true },
+  "price": 0,
+  "duration": ["short", "medium", "long"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

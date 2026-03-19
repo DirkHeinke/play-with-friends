@@ -1,0 +1,14 @@
+{
+  "slug": "factorio",
+  "title": "Factorio",
+  "description": "Factorio is a game about building and managing factories. You will be mining resources, researching technologies, building infrastructure, automating production and fighting enemies. Play with friends in co-op multiplayer.",
+  "url": "https://www.factorio.com/",
+  "players": { "min": 1, "max": 100, "softLimit": true },
+  "price": 25,
+  "duration": ["long"],
+  "platforms": ["windows", "linux", "macos"],
+  "multiplayerType": ["remote"],
+  "tags": ["co-op"],
+  "controls": [],
+  "image": null
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "8-ball-pool-bloob",
+  "title": "8 Ball Pool - bloob.io",
+  "description": "Classic 8 ball pool online on bloob.io. Challenge a friend to a head-to-head game of billiards.",
+  "url": "https://bloob.io/8ballpool",
+  "players": { "min": 2, "max": 2, "softLimit": false },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote", "local"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

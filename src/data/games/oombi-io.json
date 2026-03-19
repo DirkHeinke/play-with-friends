@@ -1,0 +1,14 @@
+{
+  "slug": "oombi-io",
+  "title": "oombi.io",
+  "description": "A 4-player competitive web game on oombi.io. Compete in various mini-game challenges with exactly four players.",
+  "url": "https://oombi.io/",
+  "players": { "min": 4, "max": 4, "softLimit": false },
+  "price": 0,
+  "duration": ["medium"],
+  "platforms": ["web"],
+  "multiplayerType": [],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

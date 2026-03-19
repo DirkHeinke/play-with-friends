@@ -1,0 +1,14 @@
+{
+  "slug": "frantic-fanfic",
+  "title": "FRANTIC FANFIC",
+  "description": "A collaborative storytelling party game. Players write the next line of a story based on a prompt, creating hilariously chaotic fan fiction.",
+  "url": "https://franticfanfic.com/",
+  "players": { "min": 3, "max": 16, "softLimit": null },
+  "price": 0,
+  "duration": ["medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

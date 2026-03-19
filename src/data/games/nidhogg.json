@@ -1,0 +1,14 @@
+{
+  "slug": "nidhogg",
+  "title": "Nidhogg",
+  "description": "An epic two-player sword-fighting game. Engage in intense fencing duels with a friend locally or online.",
+  "url": "http://nidhogggame.com/",
+  "players": { "min": 1, "max": 2, "softLimit": false },
+  "price": 10,
+  "duration": ["short"],
+  "platforms": ["windows", "macos"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}

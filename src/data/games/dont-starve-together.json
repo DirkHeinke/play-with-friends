@@ -1,0 +1,14 @@
+{
+  "slug": "dont-starve-together",
+  "title": "Don't Starve Together",
+  "description": "The standalone multiplayer expansion to Don't Starve. Survive together in a harsh wilderness with your friends in this co-op survival game.",
+  "url": "https://www.klei.com/games/dont-starve-together",
+  "players": { "min": 1, "max": 6, "softLimit": true },
+  "price": 14,
+  "duration": ["long"],
+  "platforms": ["windows", "macos", "linux"],
+  "multiplayerType": ["remote"],
+  "tags": ["co-op"],
+  "controls": [],
+  "image": null
+}

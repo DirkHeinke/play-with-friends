@@ -1,0 +1,14 @@
+{
+  "slug": "rotten-apples-bloob",
+  "title": "Rotten Apples - bloob.io",
+  "description": "A Cards Against Humanity-style party game on bloob.io. Fill in the blank with the funniest answer card to win.",
+  "url": "https://bloob.io/rottenapples",
+  "players": { "min": 3, "max": 16, "softLimit": null },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": null
+}
