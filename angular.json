@@ -72,6 +72,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/play-with-friends/",
               "budgets": [
                 {
                   "type": "initial",
