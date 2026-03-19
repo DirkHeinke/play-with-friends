@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node scripts/optimize-images.mjs && ng build && node scripts/generate-sitemap.mjs",
+    "build": "node scripts/generate-index.mjs && node scripts/optimize-images.mjs && ng build && node scripts/generate-sitemap.mjs",
     "images:optimize": "node scripts/optimize-images.mjs",
     "build:dev": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",

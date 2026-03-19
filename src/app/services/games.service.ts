@@ -1,49 +1,11 @@
-import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, of, shareReplay, switchMap } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 import { Game, GameFilters, getPriceLabel } from '../models/game.model';
 
-// Statically import all game JSON files so they are bundled and available
-// for SSG prerendering without HTTP calls.
-import factorio from '../../data/games/factorio.json';
-import garticPhone from '../../data/games/gartic-phone.json';
-import skribblIo from '../../data/games/skribbl-io.json';
-import codenames from '../../data/games/codenames.json';
-import whereIsThisCity from '../../data/games/where-is-this-city.json';
-import stopots from '../../data/games/stopots.json';
-import pretendYoureXyzzy from '../../data/games/pretend-youre-xyzzy.json';
-import dontStarveTogether from '../../data/games/dont-starve-together.json';
-import parkitect from '../../data/games/parkitect.json';
-import nidhogg from '../../data/games/nidhogg.json';
-import broforce from '../../data/games/broforce.json';
-import rocketLeague from '../../data/games/rocket-league.json';
-import couchSumo from '../../data/games/couch-sumo.json';
-import categoriesGame from '../../data/games/categories-game.json';
-import brokenPicturephone from '../../data/games/broken-picturephone.json';
-import hanab from '../../data/games/hanab.json';
-import telewave from '../../data/games/telewave.json';
-import playingcardsIo from '../../data/games/playingcards-io.json';
-import wordraceBloob from '../../data/games/wordrace-bloob.json';
-import fourInARowBloob from '../../data/games/four-in-a-row-bloob.json';
-import rottenApplesBloob from '../../data/games/rotten-apples-bloob.json';
-import checkersBloob from '../../data/games/checkers-bloob.json';
-import franticFanfic from '../../data/games/frantic-fanfic.json';
-import askew from '../../data/games/askew.json';
-import theVotesOut from '../../data/games/the-votes-out.json';
-import blomberBloob from '../../data/games/blomber-bloob.json';
-import eightBallPoolBloob from '../../data/games/8-ball-pool-bloob.json';
-import bombpartyJklm from '../../data/games/bombparty-jklm.json';
-import popsauceJklm from '../../data/games/popsauce-jklm.json';
+// Auto-generated at build time by scripts/generate-index.mjs.
+// To add a game, drop a JSON file into src/data/games/ and rebuild.
+import ALL_GAMES_DATA from '../../data/games/index.json';
 
-const ALL_GAMES: Game[] = [
-  factorio, garticPhone, skribblIo, codenames, whereIsThisCity,
-  stopots, pretendYoureXyzzy, dontStarveTogether, parkitect, nidhogg,
-  broforce, rocketLeague, couchSumo, categoriesGame, brokenPicturephone,
-  hanab, telewave, playingcardsIo, wordraceBloob, fourInARowBloob,
-  rottenApplesBloob, checkersBloob, franticFanfic, askew,
-  theVotesOut, blomberBloob, eightBallPoolBloob, bombpartyJklm, popsauceJklm,
-] as Game[];
+const ALL_GAMES = ALL_GAMES_DATA as unknown as Game[];
 
 @Injectable({ providedIn: 'root' })
 export class GamesService {

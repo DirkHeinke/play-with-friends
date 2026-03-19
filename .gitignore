@@ -45,3 +45,6 @@ Thumbs.db
 # Game images — originals live in src/data/games/images/ (not public/, so not deployed)
 # Optimized WebPs are generated at build time and gitignored
 /public/images/*.webp
+
+# Generated game index — produced by scripts/generate-index.mjs before ng build
+/src/data/games/index.json
