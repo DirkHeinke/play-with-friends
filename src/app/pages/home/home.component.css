@@ -10,7 +10,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/circuit.svg');
+  background-image: var(--circuit-bg);
   background-size: 70vw auto;
   background-repeat: no-repeat;
   background-position: center 40%;

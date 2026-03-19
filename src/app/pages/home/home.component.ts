@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ElementRef, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
 import { GameFilters } from '../../models/game.model';
 import { Router } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,12 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private router = inject(Router);
   private meta = inject(Meta);
   private title = inject(Title);
+  private el = inject(ElementRef);
+  private baseHref = inject(APP_BASE_HREF, { optional: true }) ?? '/';
 
   filters: GameFilters = {
     query: '',
@@ -24,6 +27,14 @@ export class HomeComponent {
     multiplayerType: [],
     playerCount: null,
   };
+
+  ngOnInit(): void {
+    const base = this.baseHref.endsWith('/') ? this.baseHref : this.baseHref + '/';
+    (this.el.nativeElement as HTMLElement).style.setProperty(
+      '--circuit-bg',
+      `url('${base}circuit.svg')`
+    );
+  }
 
   constructor() {
     this.title.setTitle('Play With Friends - Games for Groups');
