@@ -1,8 +1,8 @@
 /**
  * Resizes and converts game images to WebP for deployment.
  *
- * Source:  public/images/originals/<slug>.<ext>  (committed to repo)
- * Output:  public/images/<slug>.webp             (gitignored, generated at build time)
+ * Source:  src/data/games/images/<slug>.<ext>  (committed to repo, NOT in public/ so not deployed)
+ * Output:  public/images/<slug>.webp    (gitignored, generated at build time)
  *
  * Usage:   node scripts/optimize-images.mjs
  *
@@ -18,7 +18,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const ORIGINALS_DIR = join(ROOT, 'public', 'images', 'originals');
+const ORIGINALS_DIR = join(ROOT, 'src', 'data', 'games', 'images');
 const OUTPUT_DIR = join(ROOT, 'public', 'images');
 const WIDTH = parseInt(process.env.WIDTH ?? '800', 10);
 const QUALITY = parseInt(process.env.QUALITY ?? '82', 10);
@@ -33,7 +33,7 @@ async function main() {
     files = readdirSync(ORIGINALS_DIR).filter(f => SUPPORTED_EXTS.has(extname(f).toLowerCase()));
   } catch {
     console.error(`Originals directory not found: ${ORIGINALS_DIR}`);
-    console.error('Run "node scripts/download-images.mjs" first.');
+    console.error('Original images should be in src/data/games/images/ in the repo.');
     process.exit(1);
   }
 

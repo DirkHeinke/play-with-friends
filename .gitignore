@@ -42,5 +42,6 @@ testem.log
 Thumbs.db
 .playwright-cli/
 
-# Game images — originals are committed (source), optimized WebPs are generated at build time
+# Game images — originals live in src/data/games/images/ (not public/, so not deployed)
+# Optimized WebPs are generated at build time and gitignored
 /public/images/*.webp

@@ -28,7 +28,6 @@ import wordraceBloob from '../../data/games/wordrace-bloob.json';
 import fourInARowBloob from '../../data/games/four-in-a-row-bloob.json';
 import rottenApplesBloob from '../../data/games/rotten-apples-bloob.json';
 import checkersBloob from '../../data/games/checkers-bloob.json';
-import oombiIo from '../../data/games/oombi-io.json';
 import franticFanfic from '../../data/games/frantic-fanfic.json';
 import askew from '../../data/games/askew.json';
 import theVotesOut from '../../data/games/the-votes-out.json';
@@ -42,7 +41,7 @@ const ALL_GAMES: Game[] = [
   stopots, pretendYoureXyzzy, dontStarveTogether, parkitect, nidhogg,
   broforce, rocketLeague, couchSumo, categoriesGame, brokenPicturephone,
   hanab, telewave, playingcardsIo, wordraceBloob, fourInARowBloob,
-  rottenApplesBloob, checkersBloob, oombiIo, franticFanfic, askew,
+  rottenApplesBloob, checkersBloob, franticFanfic, askew,
   theVotesOut, blomberBloob, eightBallPoolBloob, bombpartyJklm, popsauceJklm,
 ] as Game[];
 
