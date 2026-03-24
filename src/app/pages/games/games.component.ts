@@ -1,8 +1,9 @@
-import { Component, inject, OnInit, signal, computed } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { GamesService } from '../../services/games.service';
 import { SearchService } from '../../services/search.service';
+import { PlausibleService } from '../../services/plausible.service';
 import { Game, GameFilters, Duration, Platform, PriceLabel, MultiplayerType } from '../../models/game.model';
 import { GameCardComponent } from '../../components/game-card/game-card.component';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
@@ -16,6 +17,7 @@ import { FilterBarComponent } from '../../components/filter-bar/filter-bar.compo
 export class GamesComponent implements OnInit {
   private gamesService = inject(GamesService);
   private searchService = inject(SearchService);
+  private plausible = inject(PlausibleService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private meta = inject(Meta);
@@ -27,6 +29,7 @@ export class GamesComponent implements OnInit {
   });
 
   filteredGames = signal<Game[]>([]);
+
 
   ngOnInit(): void {
     this.titleService.setTitle('Games - Play With Friends');
@@ -53,6 +56,7 @@ export class GamesComponent implements OnInit {
     this.filters.set(f);
     this.applyFilters(f);
     this.syncQueryParams(f);
+    this.plausible.event('Filter');
   }
 
   private applyFilters(f: GameFilters): void {

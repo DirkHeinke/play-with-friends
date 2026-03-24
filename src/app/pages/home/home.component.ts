@@ -2,6 +2,7 @@ import { Component, inject, ElementRef, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
+import { PlausibleService } from '../../services/plausible.service';
 import { GameFilters } from '../../models/game.model';
 import { Router } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
@@ -14,6 +15,7 @@ import { APP_BASE_HREF } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   private router = inject(Router);
+  private plausible = inject(PlausibleService);
   private meta = inject(Meta);
   private title = inject(Title);
   private el = inject(ElementRef);
@@ -57,6 +59,7 @@ export class HomeComponent implements OnInit {
     if (this.filters.multiplayerType.length) params['type'] = this.filters.multiplayerType.join(',');
     if (this.filters.playerCount !== null) params['players'] = String(this.filters.playerCount);
 
+    this.plausible.event('Search');
     this.router.navigate(['/games'], { queryParams: params });
   }
 }
