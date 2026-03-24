@@ -15,7 +15,9 @@
   "platforms": [
     "web"
   ],
-  "multiplayerType": [],
+  "multiplayerType": [
+    "remote"
+  ],
   "tags": [],
   "controls": [
     "smartphone-controller"

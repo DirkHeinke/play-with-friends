@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node scripts/generate-index.mjs && node scripts/optimize-images.mjs && ng build && node scripts/generate-sitemap.mjs",
+    "build": "tsx scripts/validate-games.ts && node scripts/generate-index.mjs && node scripts/optimize-images.mjs && ng build && node scripts/generate-sitemap.mjs",
+    "validate": "tsx scripts/validate-games.ts",
     "images:optimize": "node scripts/optimize-images.mjs",
-    "build:dev": "ng build --configuration development",
+    "build:dev": "tsx scripts/validate-games.ts && ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
@@ -29,6 +30,7 @@
     "lunr": "^2.3.9",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "zod": "^4.3.6",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
@@ -45,6 +47,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "sharp": "^0.34.5",
+    "tsx": "^4.21.0",
     "typescript": "~5.7.2"
   }
 }

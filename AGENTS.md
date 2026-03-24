@@ -9,7 +9,7 @@ Live at: https://playwithfriends.link/ | Source: `src/` | Deploy: GitHub Pages
 
 Angular 19 standalone-component site — a curated multiplayer game directory. Statically prerendered to 34 routes via `@angular/ssr`. No NgModules, no CSS preprocessor, no state management library.
 
-**Stack:** Angular 19 · TypeScript 5.7 (strict) · Lunr.js · Express (SSR) · Karma/Jasmine
+**Stack:** Angular 19 · TypeScript 5.7 (strict) · Zod · Lunr.js · Express (SSR) · Karma/Jasmine
 
 ---
 
@@ -36,6 +36,9 @@ npm test                         # ng test
 # then run: npm test
 # Remove the f-prefix when done.
 
+# Validate all game JSON files against the schema (runs automatically before build)
+npm run validate
+
 # Regenerate game index from src/data/games/*.json
 node scripts/generate-index.mjs
 
@@ -50,6 +53,8 @@ npm run serve:ssr:playwithfriends
 ```
 
 **No linter or formatter is configured** (no ESLint, Prettier, or Biome). The TypeScript compiler (`tsc`) via Angular CLI is the only static analysis tool.
+
+Validation (`npm run validate`) runs automatically as the first step of `npm run build` and `npm run build:dev`, and as a dedicated CI job on every PR. A PR with an invalid game file will fail before the build runs.
 
 ---
 
@@ -159,19 +164,19 @@ Use Angular 17+ **block control flow** — never `*ngIf` / `*ngFor` directives:
 
 ### Types and Interfaces
 
-- Use `interface` for object shapes (data models).
-- Use `type` for union string literals and aliases.
-- Nullable fields: `T | null` (not `T | undefined` unless the value can be truly absent from an object).
-- Avoid `any`. Use `unknown` when the type is genuinely unknown, then narrow it.
+Game-related types are derived from the Zod schema — do not define them manually:
 
 ```typescript
-// Good
-export interface Game { slug: string; image: string | null; }
-export type Duration = 'short' | 'medium' | 'long';
+// src/app/models/game.schema.ts — edit the schema here
+export const GameSchema = z.object({ ... });
 
-// Avoid
-const data: any = ...;
+// src/app/models/game.model.ts — types derived automatically
+export type Game = z.infer<typeof GameSchema>;
+export type Duration = Game['duration'][number];
 ```
+
+For non-game types: use `interface` for object shapes, `type` for union literals and aliases.
+Nullable fields: `T | null` (not `T | undefined`). Avoid `any` — use `unknown` and narrow it.
 
 ### Pure Functions
 
@@ -233,7 +238,28 @@ node scripts/generate-index.mjs
 
 `src/data/games/index.json` is auto-generated and **gitignored** — never edit it manually.
 
-The `Game` interface (in `src/app/models/game.model.ts`) is the source of truth for the schema.
+The **Zod schema** in `src/app/models/game.schema.ts` is the single source of truth. TypeScript types in `game.model.ts` are derived from it via `z.infer<>` — never edit the types there directly, edit the schema instead.
+
+### Game schema
+
+```
+slug            string         non-empty; must match the filename (e.g. "codenames" for codenames.json)
+title           string         non-empty
+description     string | null
+url             string         must start with http:// or https://
+players.min     integer        >= 1
+players.max     integer        >= players.min
+players.softLimit boolean | null  true means "can exceed max", displayed as "max+"
+price           number         >= 0  (0 = free; raw EUR value, converted to label at runtime)
+duration        string[]       non-empty; allowed: "short" | "medium" | "long"
+platforms       string[]       non-empty; allowed: "web" | "windows" | "linux" | "macos"
+multiplayerType string[]       non-empty; allowed: "local" | "remote"
+tags            string[]       any strings
+controls        string[]       allowed: "smartphone-controller"
+image           string | null  relative path e.g. "images/my-game.webp", or null
+```
+
+Run `npm run validate` after adding or editing a game file to catch errors locally before opening a PR.
 
 ---
 
@@ -243,7 +269,7 @@ The `Game` interface (in `src/app/models/game.model.ts`) is the source of truth 
 - **Services:** `GamesService` — data access and filtering. `SearchService` — Lunr full-text index.
 - **No tests exist** — `angular.json` sets `skipTests: true` for all schematics. The test runner is configured (Karma/Jasmine) but no `.spec.ts` files are present.
 - **No git hooks** — no Husky, lint-staged, or pre-commit scripts.
-- **CI:** `.github/workflows/deploy.yml` — push to `master` triggers full build and deploy to GitHub Pages.
+- **CI:** `.github/workflows/deploy.yml` — every PR runs `npm run validate` as a blocking `validate` job; push to `master` also runs the full build and deploys to GitHub Pages.
 
 ---
 

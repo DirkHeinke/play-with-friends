@@ -1,38 +1,15 @@
-export interface GamePlayers {
-  min: number;
-  max: number;
-  softLimit: boolean | null;
-}
+import { z } from 'zod';
+import { GameSchema, GameFiltersSchema } from './game.schema';
 
-export type Duration = 'short' | 'medium' | 'long';
-export type Platform = 'web' | 'windows' | 'linux' | 'macos';
-export type MultiplayerType = 'local' | 'remote';
-export type Control = 'smartphone-controller';
-export type PriceLabel = 'free' | 'cheap' | 'medium' | 'expensive';
+export type GamePlayers = z.infer<typeof GameSchema>['players'];
+export type Game = z.infer<typeof GameSchema>;
+export type GameFilters = z.infer<typeof GameFiltersSchema>;
 
-export interface Game {
-  slug: string;
-  title: string;
-  description: string | null;
-  url: string;
-  players: GamePlayers;
-  price: number;
-  duration: Duration[];
-  platforms: Platform[];
-  multiplayerType: MultiplayerType[];
-  tags: string[];
-  controls: Control[];
-  image: string | null;
-}
-
-export interface GameFilters {
-  query: string;
-  duration: Duration[];
-  platforms: Platform[];
-  price: PriceLabel[];
-  multiplayerType: MultiplayerType[];
-  playerCount: number | null;
-}
+export type Duration = Game['duration'][number];
+export type Platform = Game['platforms'][number];
+export type MultiplayerType = Game['multiplayerType'][number];
+export type Control = Game['controls'][number];
+export type PriceLabel = GameFilters['price'][number];
 
 export function getPriceLabel(price: number): PriceLabel {
   if (price === 0) return 'free';
