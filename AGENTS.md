@@ -1,0 +1,261 @@
+# AGENTS.md — Play With Friends
+
+Developer and agent reference for the **Play With Friends** Angular SSG website.
+Live at: https://playwithfriends.link/ | Source: `src/` | Deploy: GitHub Pages
+
+---
+
+## Project Overview
+
+Angular 19 standalone-component site — a curated multiplayer game directory. Statically prerendered to 34 routes via `@angular/ssr`. No NgModules, no CSS preprocessor, no state management library.
+
+**Stack:** Angular 19 · TypeScript 5.7 (strict) · Lunr.js · Express (SSR) · Karma/Jasmine
+
+---
+
+## Build, Dev & Lint Commands
+
+```bash
+# Development server (http://localhost:4200)
+npm start                        # ng serve
+
+# Full production build (index → images → SSG → sitemap)
+npm run build
+
+# Development build only (no image processing)
+npm run build:dev                # ng build --configuration development
+
+# Watch mode (rebuilds on change)
+npm run watch
+
+# Run all tests (Karma + Jasmine in Chrome)
+npm test                         # ng test
+
+# Run a single test file (no dedicated flag — use fdescribe/fit in Jasmine):
+# Wrap the spec block with fdescribe() or fit() to focus a single suite/spec,
+# then run: npm test
+# Remove the f-prefix when done.
+
+# Regenerate game index from src/data/games/*.json
+node scripts/generate-index.mjs
+
+# Optimise images to WebP (requires originals in a source folder)
+npm run images:optimize
+
+# Regenerate sitemap (after ng build)
+npm run generate-sitemap
+
+# Serve the SSR build locally
+npm run serve:ssr:playwithfriends
+```
+
+**No linter or formatter is configured** (no ESLint, Prettier, or Biome). The TypeScript compiler (`tsc`) via Angular CLI is the only static analysis tool.
+
+---
+
+## TypeScript Configuration
+
+`tsconfig.json` enforces:
+
+- `strict: true` — all strict checks enabled
+- `noImplicitOverride`, `noPropertyAccessFromIndexSignature`, `noImplicitReturns`, `noFallthroughCasesInSwitch`
+- `target/module: "ES2022"`, `moduleResolution: "bundler"`
+- `isolatedModules: true`, `resolveJsonModule: true`
+- Angular template checks: `strictTemplates`, `strictInjectionParameters`, `strictInputAccessModifiers`
+
+Never disable strict checks. Fix type errors; do not use `any` or `// @ts-ignore`.
+
+---
+
+## Code Style Guidelines
+
+### Formatting (`.editorconfig`)
+
+- **Indentation:** 2 spaces (no tabs)
+- **Quotes:** Single quotes in TypeScript files
+- **Trailing whitespace:** Trimmed on save
+- **Final newline:** Required in every file
+
+### Imports
+
+Group imports in this order (no blank lines between groups unless clearly distinct):
+
+1. Angular core (`@angular/core`, `@angular/router`, etc.)
+2. Third-party libraries (`lunr`, etc.)
+3. Local services (`../../services/…`)
+4. Local models (`../../models/…` or `../models/…`)
+5. Local components (`../../components/…`)
+
+Use named imports only. No barrel `index.ts` files exist — import directly from the source file.
+
+```typescript
+// Good
+import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GamesService } from '../../services/games.service';
+import { Game, GameFilters } from '../../models/game.model';
+import { GameCardComponent } from '../../components/game-card/game-card.component';
+```
+
+### Naming Conventions
+
+| Construct | Convention | Example |
+|-----------|-----------|---------|
+| Classes, interfaces, types | `PascalCase` | `GamesService`, `GameFilters` |
+| Methods, properties, variables | `camelCase` | `filteredGames`, `buildIndex` |
+| Component selectors | `kebab-case` with `app-` prefix | `app-game-card` |
+| File names | `kebab-case` | `game-card.component.ts` |
+| Union-type string literals | lowercase | `'short' \| 'medium' \| 'long'` |
+| Private class members | No underscore prefix | `private gamesService = inject(...)` |
+
+### Angular Components
+
+All components are **standalone** — no `NgModule`. Always specify `imports: []` in `@Component`.
+
+```typescript
+@Component({
+  selector: 'app-example',
+  imports: [RouterLink, CommonModule],
+  templateUrl: './example.component.html',
+  styleUrl: './example.component.css',
+})
+export class ExampleComponent { ... }
+```
+
+- Use `inject()` for dependency injection in page-level/complex components.
+- Constructor injection is acceptable in simple components with no or one dependency.
+- Use `@Input({ required: true })` for required inputs; pair with `!` non-null assertion on the property.
+
+### Signals
+
+Use Angular signals for reactive state in components (not RxJS Subject/BehaviorSubject):
+
+```typescript
+filters = signal<GameFilters>({ query: '', duration: [], ... });
+filteredGames = signal<Game[]>([]);
+// Update with .set(), .update(), or .mutate()
+this.filteredGames.set(result);
+```
+
+Use `computed()` for derived values where appropriate.
+
+### Templates
+
+Use Angular 17+ **block control flow** — never `*ngIf` / `*ngFor` directives:
+
+```html
+@if (game.image) {
+  <img [src]="game.image" [alt]="game.title" />
+} @else {
+  <span class="placeholder">{{ game.title[0] }}</span>
+}
+
+@for (game of filteredGames(); track game.slug) {
+  <app-game-card [game]="game" />
+}
+```
+
+`track` is required in every `@for` block. Use a unique identifier (typically `slug` or `id`).
+
+### Types and Interfaces
+
+- Use `interface` for object shapes (data models).
+- Use `type` for union string literals and aliases.
+- Nullable fields: `T | null` (not `T | undefined` unless the value can be truly absent from an object).
+- Avoid `any`. Use `unknown` when the type is genuinely unknown, then narrow it.
+
+```typescript
+// Good
+export interface Game { slug: string; image: string | null; }
+export type Duration = 'short' | 'medium' | 'long';
+
+// Avoid
+const data: any = ...;
+```
+
+### Pure Functions
+
+Extract shared logic as **exported pure functions** from the model file, not as service methods or component helpers:
+
+```typescript
+// src/app/models/game.model.ts
+export function getPriceLabel(price: number): PriceLabel { ... }
+export function getPlayersLabel(players: GamePlayers): string { ... }
+```
+
+Import and call them directly wherever needed.
+
+### Error Handling
+
+- Use `try/catch` with an empty `catch` block (no binding) only when failure is expected and recovery is trivial (e.g., invalid search query → return `[]`).
+- In Node.js build scripts, log the error to `console.error` and `process.exit(1)` on fatal failures.
+- Do not swallow unexpected errors silently.
+
+```typescript
+try {
+  results = this.index.search(wildcardQuery);
+} catch {
+  return []; // Lunr throws on malformed queries — safe to ignore
+}
+```
+
+---
+
+## CSS Guidelines
+
+- **Plain CSS only** — no Sass, Less, PostCSS, or Tailwind.
+- Each component has its own `.component.css` file; styles are scoped by Angular's view encapsulation.
+- Global styles live in `src/styles.css` — CSS custom properties (variables) are defined here.
+- Always use global CSS custom properties for colours, spacing, and transitions:
+
+```css
+/* Use design tokens, not raw values */
+background: var(--bg-surface);
+border: 1px solid var(--border);
+color: var(--accent);
+transition: var(--transition);
+border-radius: var(--radius);
+```
+
+Key design tokens: `--bg`, `--bg-surface`, `--bg-elevated`, `--border`, `--text`, `--text-muted`, `--accent`, `--accent-hover`, `--accent-light`, `--radius`, `--radius-lg`, `--shadow`, `--transition`.
+
+Price colour classes: `.price-free`, `.price-cheap`, `.price-medium`, `.price-expensive`.
+
+---
+
+## Game Data
+
+Games are stored as individual JSON files in `src/data/games/*.json`. After adding or modifying a game file, regenerate the index:
+
+```bash
+node scripts/generate-index.mjs
+```
+
+`src/data/games/index.json` is auto-generated and **gitignored** — never edit it manually.
+
+The `Game` interface (in `src/app/models/game.model.ts`) is the source of truth for the schema.
+
+---
+
+## Architecture Notes
+
+- **Routing:** Lazy-loaded routes in `app.routes.ts`. SSR render modes in `app.routes.server.ts`.
+- **Services:** `GamesService` — data access and filtering. `SearchService` — Lunr full-text index.
+- **No tests exist** — `angular.json` sets `skipTests: true` for all schematics. The test runner is configured (Karma/Jasmine) but no `.spec.ts` files are present.
+- **No git hooks** — no Husky, lint-staged, or pre-commit scripts.
+- **CI:** `.github/workflows/deploy.yml` — push to `master` triggers full build and deploy to GitHub Pages.
+
+---
+
+## Adding a New Page / Component
+
+```bash
+# Generate a standalone component (tests skipped per project config)
+ng generate component components/my-component
+ng generate component pages/my-page
+
+# Register the route manually in src/app/app.routes.ts (lazy-loaded)
+{ path: 'my-page', loadComponent: () => import('./pages/my-page/my-page.component').then(m => m.MyPageComponent) }
+
+# Add prerender route if needed in src/app/app.routes.server.ts
+```
