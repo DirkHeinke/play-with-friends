@@ -12,10 +12,12 @@ Server Side generated Angular app with static hosting on github pages. Code most
 To start a local development server, run:
 
 ```bash
-ng serve
+npm run start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+`npm run start` also watches `src/data/games/*.json` and regenerates `src/data/games/index.json` automatically when game files change.
 
 ## Formatting
 

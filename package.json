@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node scripts/watch-games-index.mjs & ng serve",
     "build": "tsx scripts/validate-games.ts && node scripts/generate-index.mjs && node scripts/optimize-images.mjs && ng build && node scripts/generate-sitemap.mjs",
     "validate": "tsx scripts/validate-games.ts",
     "format": "prettier --write \"{src,scripts,public}/**/*.{ts,mjs,js,html,css,json}\" \"src/data/games/**/*.json\" \"*.{json,md,yaml,yml}\" \".github/workflows/**/*.{yml,yaml}\" \".vscode/**/*.json\"",
