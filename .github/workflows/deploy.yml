@@ -61,6 +61,8 @@ jobs:
         run: node scripts/generate-index.mjs
 
       - name: Run E2E tests
+        env:
+          NODE_OPTIONS: --max-old-space-size=1536
         run: npm run e2e
 
       - name: Upload Playwright report
