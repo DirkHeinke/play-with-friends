@@ -20,7 +20,7 @@ export const GameSchema = z.object({
   platforms: z.array(z.enum(['web', 'windows', 'linux', 'macos'])).min(1),
   multiplayerType: z.array(z.enum(['local', 'remote'])).min(1),
   tags: z.array(z.string()),
-  controls: z.array(z.enum(['smartphone-controller'])),
+  controls: z.array(z.enum(['smartphone-controller', 'game-controller'])),
   image: z.string().nullable(),
 }).strict();
 
@@ -31,4 +31,5 @@ export const GameFiltersSchema = z.object({
   price: z.array(z.enum(['free', 'cheap', 'medium', 'expensive'])),
   multiplayerType: z.array(z.enum(['local', 'remote'])),
   playerCount: z.number().int().min(1).nullable(),
+  controls: z.array(z.enum(['smartphone-controller', 'game-controller'])),
 });

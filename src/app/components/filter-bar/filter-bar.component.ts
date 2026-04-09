@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { GameFilters, Duration, Platform, PriceLabel, MultiplayerType } from '../../models/game.model';
+import { GameFilters, Duration, Platform, PriceLabel, MultiplayerType, Control, getControlLabel } from '../../models/game.model';
 
 @Component({
   selector: 'app-filter-bar',
@@ -16,9 +16,11 @@ export class FilterBarComponent {
   platforms: Platform[] = ['web', 'windows', 'macos', 'linux'];
   prices: PriceLabel[] = ['free', 'cheap', 'medium', 'expensive'];
   multiplayerTypes: MultiplayerType[] = ['remote', 'local'];
+  controls: Control[] = ['smartphone-controller', 'game-controller'];
+  getControlLabel = getControlLabel;
 
   emptyFilters(): GameFilters {
-    return { query: '', duration: [], platforms: [], price: [], multiplayerType: [], playerCount: null };
+    return { query: '', duration: [], platforms: [], price: [], multiplayerType: [], playerCount: null, controls: [] };
   }
 
   toggleDuration(d: Duration): void {
@@ -53,6 +55,14 @@ export class FilterBarComponent {
     this.filtersChange.emit(this.filters);
   }
 
+  toggleControl(c: Control): void {
+    this.filters = {
+      ...this.filters,
+      controls: this.toggleItem(this.filters.controls, c),
+    };
+    this.filtersChange.emit(this.filters);
+  }
+
   onQueryChange(q: string): void {
     this.filters = { ...this.filters, query: q };
     this.filtersChange.emit(this.filters);
@@ -76,6 +86,7 @@ export class FilterBarComponent {
       this.filters.platforms.length ||
       this.filters.price.length ||
       this.filters.multiplayerType.length ||
+      this.filters.controls.length ||
       this.filters.playerCount !== null
     );
   }

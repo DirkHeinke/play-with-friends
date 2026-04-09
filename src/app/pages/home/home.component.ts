@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
     price: [],
     multiplayerType: [],
     playerCount: null,
+    controls: [],
   };
 
   ngOnInit(): void {

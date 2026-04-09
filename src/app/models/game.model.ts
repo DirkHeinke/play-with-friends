@@ -22,3 +22,11 @@ export function getPlayersLabel(players: GamePlayers): string {
   const max = players.softLimit === true ? `${players.max}+` : `${players.max}`;
   return `${players.min} - ${max}`;
 }
+
+export function getControlLabel(control: Control): string {
+  const labels: Record<Control, string> = {
+    'smartphone-controller': 'Smartphone Controller',
+    'game-controller': 'Game Controller',
+  };
+  return labels[control];
+}

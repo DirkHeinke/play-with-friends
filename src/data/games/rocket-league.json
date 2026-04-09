@@ -20,6 +20,8 @@
     "remote"
   ],
   "tags": [],
-  "controls": [],
+  "controls": [
+    "game-controller"
+  ],
   "image": "images/rocket-league.webp"
 }

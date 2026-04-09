@@ -43,6 +43,11 @@ export class GamesService {
         if (!hasMatch) return false;
       }
 
+      if (filters.controls.length > 0) {
+        const hasMatch = filters.controls.some(c => game.controls.includes(c));
+        if (!hasMatch) return false;
+      }
+
       if (filters.playerCount !== null) {
         if (game.players.min > filters.playerCount) return false;
         if (game.players.max < filters.playerCount && game.players.softLimit !== true) return false;

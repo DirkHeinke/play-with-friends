@@ -23,6 +23,8 @@
   "tags": [
     "co-op"
   ],
-  "controls": [],
+  "controls": [
+    "game-controller"
+  ],
   "image": "images/dont-starve-together.webp"
 }

@@ -4,7 +4,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { GamesService } from '../../services/games.service';
 import { SearchService } from '../../services/search.service';
 import { PlausibleService } from '../../services/plausible.service';
-import { Game, GameFilters, Duration, Platform, PriceLabel, MultiplayerType } from '../../models/game.model';
+import { Game, GameFilters, Duration, Platform, PriceLabel, MultiplayerType, Control } from '../../models/game.model';
 import { GameCardComponent } from '../../components/game-card/game-card.component';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
 
@@ -25,7 +25,7 @@ export class GamesComponent implements OnInit {
 
   allGames: Game[] = [];
   filters = signal<GameFilters>({
-    query: '', duration: [], platforms: [], price: [], multiplayerType: [], playerCount: null,
+    query: '', duration: [], platforms: [], price: [], multiplayerType: [], playerCount: null, controls: [],
   });
 
   filteredGames = signal<Game[]>([]);
@@ -47,6 +47,7 @@ export class GamesComponent implements OnInit {
       price: (params.get('price')?.split(',') ?? []) as PriceLabel[],
       multiplayerType: (params.get('type')?.split(',') ?? []) as MultiplayerType[],
       playerCount: params.get('players') ? parseInt(params.get('players')!, 10) : null,
+      controls: (params.get('controls')?.split(',') ?? []) as Control[],
     };
     this.filters.set(initial);
     this.applyFilters(initial);
@@ -80,6 +81,7 @@ export class GamesComponent implements OnInit {
       price: f.price.length ? f.price.join(',') : null,
       type: f.multiplayerType.length ? f.multiplayerType.join(',') : null,
       players: f.playerCount !== null ? String(f.playerCount) : null,
+      controls: f.controls.length ? f.controls.join(',') : null,
     };
     this.router.navigate([], { queryParams: params, replaceUrl: true });
   }

@@ -21,6 +21,8 @@
     "remote"
   ],
   "tags": [],
-  "controls": [],
+  "controls": [
+    "game-controller"
+  ],
   "image": "images/nidhogg.webp"
 }
