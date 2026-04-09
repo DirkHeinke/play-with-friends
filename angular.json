@@ -59,7 +59,9 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["lunr"],
+            "allowedCommonJsDependencies": [
+              "lunr"
+            ],
             "server": "src/main.server.ts",
             "security": {
               "allowedHosts": []
@@ -72,7 +74,6 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/play-with-friends/",
               "budgets": [
                 {
                   "type": "initial",
