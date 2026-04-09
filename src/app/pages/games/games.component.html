@@ -1,7 +1,7 @@
 <div class="container games-page">
   <header class="page-header">
     <h1>Games</h1>
-    <p class="result-count">
+    <p class="result-count" data-testid="result-count">
       @if (filteredGames().length !== allGames.length) {
         {{ filteredGames().length }} of {{ allGames.length }} games
       } @else {
@@ -24,7 +24,7 @@
           <app-game-card [game]="game"></app-game-card>
         }
       } @else {
-        <div class="no-results">
+        <div class="no-results" data-testid="no-results">
           <p>No games match your filters.</p>
           <p class="no-results-hint">Try adjusting or clearing the filters.</p>
         </div>

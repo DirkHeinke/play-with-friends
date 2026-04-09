@@ -48,3 +48,9 @@ Thumbs.db
 
 # Generated game index — produced by scripts/generate-index.mjs before ng build
 /src/data/games/index.json
+
+# Playwright E2E test output
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

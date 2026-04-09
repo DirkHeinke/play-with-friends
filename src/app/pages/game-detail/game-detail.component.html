@@ -23,6 +23,7 @@
           [href]="game.url"
           target="_blank"
           rel="noopener noreferrer"
+          data-testid="play-button"
         >
           Play {{ game.title }}
         </a>
@@ -35,7 +36,7 @@
           <p class="detail-description">{{ game.description }}</p>
         }
 
-        <div class="detail-meta">
+        <div class="detail-meta" data-testid="detail-meta">
           <div class="meta-row">
             <span class="meta-label">Players</span>
             <span class="meta-value">{{ playersLabel }}</span>

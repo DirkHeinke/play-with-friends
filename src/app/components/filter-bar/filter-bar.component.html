@@ -7,6 +7,7 @@
       (input)="onQueryChange($any($event.target).value)"
       class="search-input"
       aria-label="Search games"
+      data-testid="search-input"
     />
   </div>
 
@@ -101,11 +102,12 @@
         [value]="filters.playerCount ?? ''"
         (change)="onPlayerCountChange($any($event.target).value)"
         aria-label="Number of players"
+        data-testid="players-input"
       />
     </div>
 
     @if (hasActiveFilters) {
-      <button class="reset-btn" (click)="reset()" type="button">Clear filters</button>
+      <button class="reset-btn" (click)="reset()" type="button" data-testid="clear-filters">Clear filters</button>
     }
   </div>
 </div>

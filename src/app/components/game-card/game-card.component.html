@@ -1,4 +1,4 @@
-<a class="card" [routerLink]="['/games', game.slug]">
+<a class="card" [routerLink]="['/games', game.slug]" [attr.data-testid]="'game-card-' + game.slug">
   <div class="card-image">
     @if (game.image) {
       <img [src]="game.image" [alt]="game.title" loading="lazy" />
