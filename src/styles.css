@@ -18,6 +18,9 @@
   --accent-light: rgba(0, 188, 212, 0.12);
   --tag-bg: #132030;
   --tag-text: #88aaba;
+  --tag-platform: #4db6c4;
+  --tag-type: #c4974d;
+  --tag-controls: #9b8ec4;
   --free: #4caf50;
   --cheap: #8bc34a;
   --medium: #ff9800;
@@ -137,37 +140,17 @@ h3 {
   white-space: nowrap;
 }
 
-.tag.platform-web {
-  color: #00bcd4;
-  border-color: #00bcd4;
+.tag[class*='platform-'] {
+  color: var(--tag-platform);
+  border-color: var(--tag-platform);
 }
-.tag.platform-windows {
-  color: #80deea;
-  border-color: #80deea;
-}
-.tag.platform-linux {
-  color: #a5d6a7;
-  border-color: #a5d6a7;
-}
-.tag.platform-macos {
-  color: #80cbc4;
-  border-color: #80cbc4;
-}
-.tag.type-remote {
-  color: #ffcc80;
-  border-color: #ffcc80;
-}
-.tag.type-local {
-  color: #f48fb1;
-  border-color: #f48fb1;
-}
-.tag.tag-coop {
-  color: #4dd0e1;
-  border-color: #4dd0e1;
+.tag[class*='type-'] {
+  color: var(--tag-type);
+  border-color: var(--tag-type);
 }
 .tag.control-smartphone {
-  color: #ffe082;
-  border-color: #ffe082;
+  color: var(--tag-controls);
+  border-color: var(--tag-controls);
 }
 
 .price-free {
