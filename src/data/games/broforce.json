@@ -9,23 +9,10 @@
     "softLimit": null
   },
   "price": 15,
-  "duration": [
-    "long"
-  ],
-  "platforms": [
-    "windows",
-    "macos",
-    "linux"
-  ],
-  "multiplayerType": [
-    "local",
-    "remote"
-  ],
-  "tags": [
-    "co-op"
-  ],
-  "controls": [
-    "game-controller"
-  ],
+  "duration": ["long"],
+  "platforms": ["windows", "macos", "linux"],
+  "multiplayerType": ["local", "remote"],
+  "tags": ["co-op"],
+  "controls": ["game-controller"],
   "image": "images/broforce.webp"
 }

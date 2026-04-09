@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "tsx scripts/validate-games.ts && node scripts/generate-index.mjs && node scripts/optimize-images.mjs && ng build && node scripts/generate-sitemap.mjs",
     "validate": "tsx scripts/validate-games.ts",
+    "format": "prettier --write \"{src,scripts,public}/**/*.{ts,mjs,js,html,css,json}\" \"src/data/games/**/*.json\" \"*.{json,md,yaml,yml}\" \".github/workflows/**/*.{yml,yaml}\" \".vscode/**/*.json\"",
+    "format:check": "prettier --check \"{src,scripts,public}/**/*.{ts,mjs,js,html,css,json}\" \"src/data/games/**/*.json\" \"*.{json,md,yaml,yml}\" \".github/workflows/**/*.{yml,yaml}\" \".vscode/**/*.json\"",
     "images:optimize": "node scripts/optimize-images.mjs",
     "build:dev": "tsx scripts/validate-games.ts && ng build --configuration development",
     "watch": "ng build --watch --configuration development",
@@ -46,6 +48,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.8.1",
     "sharp": "^0.34.5",
     "tsx": "^4.21.0",
     "typescript": "~5.7.2"

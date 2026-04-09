@@ -9,16 +9,9 @@
     "softLimit": true
   },
   "price": 0,
-  "duration": [
-    "medium"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "local",
-    "remote"
-  ],
+  "duration": ["medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
   "tags": [],
   "controls": [],
   "image": "images/telewave.webp"

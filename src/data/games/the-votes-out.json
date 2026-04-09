@@ -9,18 +9,10 @@
     "softLimit": null
   },
   "price": 0,
-  "duration": [
-    "short"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
   "tags": [],
-  "controls": [
-    "smartphone-controller"
-  ],
+  "controls": ["smartphone-controller"],
   "image": "images/the-votes-out.webp"
 }

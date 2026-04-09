@@ -9,20 +9,10 @@
     "softLimit": true
   },
   "price": 25,
-  "duration": [
-    "long"
-  ],
-  "platforms": [
-    "windows",
-    "linux",
-    "macos"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
-  "tags": [
-    "co-op"
-  ],
+  "duration": ["long"],
+  "platforms": ["windows", "linux", "macos"],
+  "multiplayerType": ["remote"],
+  "tags": ["co-op"],
   "controls": [],
   "image": "images/factorio.webp"
 }

@@ -16,7 +16,7 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
     async getPrerenderParams() {
       const gamesService = inject(GamesService);
-      return gamesService.getAllSlugs().map(slug => ({ slug }));
+      return gamesService.getAllSlugs().map((slug) => ({ slug }));
     },
   },
   {

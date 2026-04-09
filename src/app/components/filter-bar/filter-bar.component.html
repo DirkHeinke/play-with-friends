@@ -1,7 +1,13 @@
 <div class="filter-bar">
   <div class="filter-search">
-    <input type="search" placeholder="Search games..." [value]="filters.query"
-      (input)="onQueryChange($any($event.target).value)" class="search-input" aria-label="Search games" />
+    <input
+      type="search"
+      placeholder="Search games..."
+      [value]="filters.query"
+      (input)="onQueryChange($any($event.target).value)"
+      class="search-input"
+      aria-label="Search games"
+    />
   </div>
 
   <div class="filter-groups">
@@ -9,8 +15,14 @@
       <span class="filter-label">Duration</span>
       <div class="filter-chips">
         @for (d of durations; track d) {
-        <button class="chip" [class.active]="isActive(filters.duration, d)" (click)="toggleDuration(d)" type="button">{{
-          d }}</button>
+          <button
+            class="chip"
+            [class.active]="isActive(filters.duration, d)"
+            (click)="toggleDuration(d)"
+            type="button"
+          >
+            {{ d }}
+          </button>
         }
       </div>
     </div>
@@ -19,8 +31,14 @@
       <span class="filter-label">Platform</span>
       <div class="filter-chips">
         @for (p of platforms; track p) {
-        <button class="chip" [class.active]="isActive(filters.platforms, p)" (click)="togglePlatform(p)"
-          type="button">{{ p }}</button>
+          <button
+            class="chip"
+            [class.active]="isActive(filters.platforms, p)"
+            (click)="togglePlatform(p)"
+            type="button"
+          >
+            {{ p }}
+          </button>
         }
       </div>
     </div>
@@ -29,8 +47,14 @@
       <span class="filter-label">Price</span>
       <div class="filter-chips">
         @for (p of prices; track p) {
-        <button class="chip" [class.active]="isActive(filters.price, p)" (click)="togglePrice(p)" type="button">{{ p
-          }}</button>
+          <button
+            class="chip"
+            [class.active]="isActive(filters.price, p)"
+            (click)="togglePrice(p)"
+            type="button"
+          >
+            {{ p }}
+          </button>
         }
       </div>
     </div>
@@ -39,8 +63,14 @@
       <span class="filter-label">Mode</span>
       <div class="filter-chips">
         @for (t of multiplayerTypes; track t) {
-        <button class="chip" [class.active]="isActive(filters.multiplayerType, t)" (click)="toggleMultiplayerType(t)"
-          type="button">{{ t }}</button>
+          <button
+            class="chip"
+            [class.active]="isActive(filters.multiplayerType, t)"
+            (click)="toggleMultiplayerType(t)"
+            type="button"
+          >
+            {{ t }}
+          </button>
         }
       </div>
     </div>
@@ -49,20 +79,33 @@
       <span class="filter-label">Controls</span>
       <div class="filter-chips">
         @for (c of controls; track c) {
-        <button class="chip" [class.active]="isActive(filters.controls, c)" (click)="toggleControl(c)" type="button">{{
-          getControlLabel(c) }}</button>
+          <button
+            class="chip"
+            [class.active]="isActive(filters.controls, c)"
+            (click)="toggleControl(c)"
+            type="button"
+          >
+            {{ getControlLabel(c) }}
+          </button>
         }
       </div>
     </div>
 
     <div class="filter-group">
       <span class="filter-label">Players</span>
-      <input type="number" class="player-input" placeholder="e.g. 4" min="1" [value]="filters.playerCount ?? ''"
-        (change)="onPlayerCountChange($any($event.target).value)" aria-label="Number of players" />
+      <input
+        type="number"
+        class="player-input"
+        placeholder="e.g. 4"
+        min="1"
+        [value]="filters.playerCount ?? ''"
+        (change)="onPlayerCountChange($any($event.target).value)"
+        aria-label="Number of players"
+      />
     </div>
 
     @if (hasActiveFilters) {
-    <button class="reset-btn" (click)="reset()" type="button">Clear filters</button>
+      <button class="reset-btn" (click)="reset()" type="button">Clear filters</button>
     }
   </div>
 </div>

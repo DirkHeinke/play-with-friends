@@ -7,7 +7,10 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .card:hover {

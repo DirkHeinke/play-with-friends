@@ -10,7 +10,11 @@ import { Title, Meta } from '@angular/platform-browser';
 export class ImprintComponent {
   constructor() {
     inject(Title).setTitle('Impressum / Legal Notice - Play With Friends');
-    inject(Meta).updateTag({ name: 'description', content: 'Impressum und Datenschutzerklärung / Legal Notice and Privacy Policy for playwithfriends.link.' });
+    inject(Meta).updateTag({
+      name: 'description',
+      content:
+        'Impressum und Datenschutzerklärung / Legal Notice and Privacy Policy for playwithfriends.link.',
+    });
     inject(Meta).updateTag({ name: 'robots', content: 'noindex' });
   }
 }

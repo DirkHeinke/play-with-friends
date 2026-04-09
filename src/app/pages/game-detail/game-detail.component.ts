@@ -55,7 +55,9 @@ export class GameDetailComponent implements OnInit {
   }
 
   private setMeta(game: Game): void {
-    const desc = game.description ?? `${game.title} — a multiplayer game for ${getPlayersLabel(game.players)} players. Play with friends online or locally.`;
+    const desc =
+      game.description ??
+      `${game.title} — a multiplayer game for ${getPlayersLabel(game.players)} players. Play with friends online or locally.`;
     this.titleService.setTitle(`${game.title} - Play With Friends`);
     this.meta.updateTag({ name: 'description', content: desc });
     this.meta.updateTag({ property: 'og:title', content: `${game.title} - Play With Friends` });

@@ -14,22 +14,22 @@ export class GamesService {
   }
 
   getGameBySlug(slug: string): Game | undefined {
-    return ALL_GAMES.find(g => g.slug === slug);
+    return ALL_GAMES.find((g) => g.slug === slug);
   }
 
   getAllSlugs(): string[] {
-    return ALL_GAMES.map(g => g.slug);
+    return ALL_GAMES.map((g) => g.slug);
   }
 
   filterGames(games: Game[], filters: GameFilters): Game[] {
-    return games.filter(game => {
+    return games.filter((game) => {
       if (filters.duration.length > 0) {
-        const hasMatch = filters.duration.some(d => game.duration.includes(d));
+        const hasMatch = filters.duration.some((d) => game.duration.includes(d));
         if (!hasMatch) return false;
       }
 
       if (filters.platforms.length > 0) {
-        const hasMatch = filters.platforms.some(p => game.platforms.includes(p));
+        const hasMatch = filters.platforms.some((p) => game.platforms.includes(p));
         if (!hasMatch) return false;
       }
 
@@ -39,12 +39,12 @@ export class GamesService {
       }
 
       if (filters.multiplayerType.length > 0) {
-        const hasMatch = filters.multiplayerType.some(t => game.multiplayerType.includes(t));
+        const hasMatch = filters.multiplayerType.some((t) => game.multiplayerType.includes(t));
         if (!hasMatch) return false;
       }
 
       if (filters.controls.length > 0) {
-        const hasMatch = filters.controls.some(c => game.controls.includes(c));
+        const hasMatch = filters.controls.some((c) => game.controls.includes(c));
         if (!hasMatch) return false;
       }
 

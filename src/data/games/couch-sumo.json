@@ -9,19 +9,10 @@
     "softLimit": true
   },
   "price": 0,
-  "duration": [
-    "short"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "local",
-    "remote"
-  ],
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
   "tags": [],
-  "controls": [
-    "smartphone-controller"
-  ],
+  "controls": ["smartphone-controller"],
   "image": "images/couch-sumo.webp"
 }

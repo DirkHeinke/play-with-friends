@@ -7,31 +7,33 @@
 
 /* ─── CSS Custom Properties (dark-only theme) ─────────────────────── */
 :root {
-  --bg:           #050a0e;
-  --bg-surface:   #0d1a20;
-  --bg-elevated:  #132030;
-  --border:       #1e3040;
-  --text:         #e8f0f4;
-  --text-muted:   #6a8a9a;
-  --accent:       #00bcd4;
+  --bg: #050a0e;
+  --bg-surface: #0d1a20;
+  --bg-elevated: #132030;
+  --border: #1e3040;
+  --text: #e8f0f4;
+  --text-muted: #6a8a9a;
+  --accent: #00bcd4;
   --accent-hover: #26c6da;
   --accent-light: rgba(0, 188, 212, 0.12);
-  --tag-bg:       #132030;
-  --tag-text:     #88aaba;
-  --free:         #4caf50;
-  --cheap:        #8bc34a;
-  --medium:       #ff9800;
-  --expensive:    #f44336;
-  --nav-height:   64px;
+  --tag-bg: #132030;
+  --tag-text: #88aaba;
+  --free: #4caf50;
+  --cheap: #8bc34a;
+  --medium: #ff9800;
+  --expensive: #f44336;
+  --nav-height: 64px;
   --footer-height: 56px;
-  --radius:       4px;
-  --radius-lg:    8px;
-  --shadow:       0 4px 32px rgba(0, 0, 0, 0.6);
-  --transition:   160ms ease;
+  --radius: 4px;
+  --radius-lg: 8px;
+  --shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
+  --transition: 160ms ease;
 }
 
 /* ─── Reset ───────────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -42,7 +44,12 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family:
+    'Open Sans',
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -58,7 +65,9 @@ a:hover {
   color: var(--accent-hover);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.2;
   font-weight: 700;
 }
@@ -82,7 +91,11 @@ h1, h2, h3 {
   text-transform: uppercase;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .btn-primary {
@@ -124,22 +137,64 @@ h1, h2, h3 {
   white-space: nowrap;
 }
 
-.tag.platform-web     { color: #00bcd4; border-color: #00bcd4; }
-.tag.platform-windows { color: #80deea; border-color: #80deea; }
-.tag.platform-linux   { color: #a5d6a7; border-color: #a5d6a7; }
-.tag.platform-macos   { color: #80cbc4; border-color: #80cbc4; }
-.tag.type-remote      { color: #ffcc80; border-color: #ffcc80; }
-.tag.type-local       { color: #f48fb1; border-color: #f48fb1; }
-.tag.tag-coop         { color: #4dd0e1; border-color: #4dd0e1; }
-.tag.control-smartphone { color: #ffe082; border-color: #ffe082; }
+.tag.platform-web {
+  color: #00bcd4;
+  border-color: #00bcd4;
+}
+.tag.platform-windows {
+  color: #80deea;
+  border-color: #80deea;
+}
+.tag.platform-linux {
+  color: #a5d6a7;
+  border-color: #a5d6a7;
+}
+.tag.platform-macos {
+  color: #80cbc4;
+  border-color: #80cbc4;
+}
+.tag.type-remote {
+  color: #ffcc80;
+  border-color: #ffcc80;
+}
+.tag.type-local {
+  color: #f48fb1;
+  border-color: #f48fb1;
+}
+.tag.tag-coop {
+  color: #4dd0e1;
+  border-color: #4dd0e1;
+}
+.tag.control-smartphone {
+  color: #ffe082;
+  border-color: #ffe082;
+}
 
-.price-free      { color: var(--free); }
-.price-cheap     { color: var(--cheap); }
-.price-medium    { color: var(--medium); }
-.price-expensive { color: var(--expensive); }
+.price-free {
+  color: var(--free);
+}
+.price-cheap {
+  color: var(--cheap);
+}
+.price-medium {
+  color: var(--medium);
+}
+.price-expensive {
+  color: var(--expensive);
+}
 
 /* ─── Scrollbar ───────────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

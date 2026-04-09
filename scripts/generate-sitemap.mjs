@@ -21,11 +21,9 @@ const staticRoutes = [
 ];
 
 const files = await readdir(GAMES_DIR);
-const slugs = files
-  .filter(f => f.endsWith('.json'))
-  .map(f => f.replace('.json', ''));
+const slugs = files.filter((f) => f.endsWith('.json')).map((f) => f.replace('.json', ''));
 
-const gameRoutes = slugs.map(slug => ({
+const gameRoutes = slugs.map((slug) => ({
   path: `/games/${slug}`,
   priority: '0.8',
   changefreq: 'monthly',
@@ -35,12 +33,16 @@ const allRoutes = [...staticRoutes, ...gameRoutes];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allRoutes.map(r => `  <url>
+${allRoutes
+  .map(
+    (r) => `  <url>
     <loc>${BASE_URL}${r.path}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-  </url>`).join('\n')}
+  </url>`
+  )
+  .join('\n')}
 </urlset>
 `;
 

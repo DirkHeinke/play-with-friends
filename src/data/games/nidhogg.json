@@ -9,20 +9,10 @@
     "softLimit": false
   },
   "price": 10,
-  "duration": [
-    "short"
-  ],
-  "platforms": [
-    "windows",
-    "macos"
-  ],
-  "multiplayerType": [
-    "local",
-    "remote"
-  ],
+  "duration": ["short"],
+  "platforms": ["windows", "macos"],
+  "multiplayerType": ["local", "remote"],
   "tags": [],
-  "controls": [
-    "game-controller"
-  ],
+  "controls": ["game-controller"],
   "image": "images/nidhogg.webp"
 }

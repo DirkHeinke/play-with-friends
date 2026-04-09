@@ -9,15 +9,9 @@
     "softLimit": true
   },
   "price": 0,
-  "duration": [
-    "short"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
   "tags": [],
   "controls": [],
   "image": "images/where-is-this-city.webp"

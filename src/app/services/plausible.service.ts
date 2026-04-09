@@ -8,7 +8,12 @@ export class PlausibleService {
   event(name: string, props?: Record<string, string | number | boolean>): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    const w = window as unknown as { plausible?: (name: string, opts?: { props?: Record<string, string | number | boolean> }) => void };
+    const w = window as unknown as {
+      plausible?: (
+        name: string,
+        opts?: { props?: Record<string, string | number | boolean> }
+      ) => void;
+    };
     if (typeof w['plausible'] !== 'function') return;
 
     w['plausible'](name, props ? { props } : undefined);

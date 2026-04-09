@@ -9,16 +9,9 @@
     "softLimit": false
   },
   "price": 0,
-  "duration": [
-    "short"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote",
-    "local"
-  ],
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote", "local"],
   "tags": [],
   "controls": [],
   "image": "images/8-ball-pool-bloob.webp"

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.code-search
+coverage/
+.claude/
+.playwright/
+lima-agent.yaml

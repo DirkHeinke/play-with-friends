@@ -4,7 +4,15 @@ import { Meta, Title } from '@angular/platform-browser';
 import { GamesService } from '../../services/games.service';
 import { SearchService } from '../../services/search.service';
 import { PlausibleService } from '../../services/plausible.service';
-import { Game, GameFilters, Duration, Platform, PriceLabel, MultiplayerType, Control } from '../../models/game.model';
+import {
+  Game,
+  GameFilters,
+  Duration,
+  Platform,
+  PriceLabel,
+  MultiplayerType,
+  Control,
+} from '../../models/game.model';
 import { GameCardComponent } from '../../components/game-card/game-card.component';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
 
@@ -25,15 +33,24 @@ export class GamesComponent implements OnInit {
 
   allGames: Game[] = [];
   filters = signal<GameFilters>({
-    query: '', duration: [], platforms: [], price: [], multiplayerType: [], playerCount: null, controls: [],
+    query: '',
+    duration: [],
+    platforms: [],
+    price: [],
+    multiplayerType: [],
+    playerCount: null,
+    controls: [],
   });
 
   filteredGames = signal<Game[]>([]);
 
-
   ngOnInit(): void {
     this.titleService.setTitle('Games - Play With Friends');
-    this.meta.updateTag({ name: 'description', content: 'Browse all multiplayer games — filter by platform, price, duration and number of players.' });
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Browse all multiplayer games — filter by platform, price, duration and number of players.',
+    });
 
     this.allGames = this.gamesService.getAllGames();
     this.searchService.buildIndex(this.allGames);

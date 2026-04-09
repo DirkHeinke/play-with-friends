@@ -9,16 +9,9 @@
     "softLimit": null
   },
   "price": 0,
-  "duration": [
-    "short",
-    "medium"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
   "tags": [],
   "controls": [],
   "image": "images/categories-game.webp"

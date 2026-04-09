@@ -9,15 +9,9 @@
     "softLimit": null
   },
   "price": 0,
-  "duration": [
-    "medium"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
+  "duration": ["medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
   "tags": [],
   "controls": [],
   "image": "images/frantic-fanfic.webp"

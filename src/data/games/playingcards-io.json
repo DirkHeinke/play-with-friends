@@ -9,17 +9,9 @@
     "softLimit": true
   },
   "price": 0,
-  "duration": [
-    "short",
-    "medium",
-    "long"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
+  "duration": ["short", "medium", "long"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
   "tags": [],
   "controls": [],
   "image": "images/playingcards-io.webp"

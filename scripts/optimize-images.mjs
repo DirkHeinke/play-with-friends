@@ -30,7 +30,7 @@ const SUPPORTED_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif
 async function main() {
   let files;
   try {
-    files = readdirSync(ORIGINALS_DIR).filter(f => SUPPORTED_EXTS.has(extname(f).toLowerCase()));
+    files = readdirSync(ORIGINALS_DIR).filter((f) => SUPPORTED_EXTS.has(extname(f).toLowerCase()));
   } catch {
     console.error(`Originals directory not found: ${ORIGINALS_DIR}`);
     console.error('Original images should be in src/data/games/images/ in the repo.');
@@ -62,7 +62,9 @@ async function main() {
         const kbIn = Math.round((await import('fs')).statSync(inputPath).size / 1024);
         const kbOut = Math.round(info.size / 1024);
         const pct = Math.round((1 - kbOut / kbIn) * 100);
-        console.log(`  ✓ ${slug}.webp  ${kbIn}kB → ${kbOut}kB (${pct > 0 ? '-' : '+'}${Math.abs(pct)}%)`);
+        console.log(
+          `  ✓ ${slug}.webp  ${kbIn}kB → ${kbOut}kB (${pct > 0 ? '-' : '+'}${Math.abs(pct)}%)`
+        );
         ok++;
       } catch (err) {
         console.error(`  ✗ ${slug}: ${err.message}`);
@@ -74,7 +76,7 @@ async function main() {
   console.log(`\nDone. Optimized: ${ok}, Failed: ${failed}`);
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });

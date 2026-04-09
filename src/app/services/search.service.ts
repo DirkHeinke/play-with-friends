@@ -9,7 +9,7 @@ export class SearchService {
 
   buildIndex(games: Game[]): void {
     this.gamesMap.clear();
-    games.forEach(g => this.gamesMap.set(g.slug, g));
+    games.forEach((g) => this.gamesMap.set(g.slug, g));
 
     this.index = lunr(function () {
       this.ref('slug');
@@ -21,7 +21,7 @@ export class SearchService {
       this.field('controls');
       this.field('duration');
 
-      games.forEach(game => {
+      games.forEach((game) => {
         this.add({
           slug: game.slug,
           title: game.title,
@@ -41,18 +41,24 @@ export class SearchService {
 
     try {
       // Try wildcard search first for partial matches
-      const wildcardQuery = query.trim().split(/\s+/).map(t => `${t}*`).join(' ');
+      const wildcardQuery = query
+        .trim()
+        .split(/\s+/)
+        .map((t) => `${t}*`)
+        .join(' ');
       let results = this.index.search(wildcardQuery);
 
       // Fall back to fuzzy if no results
       if (results.length === 0) {
-        const fuzzyQuery = query.trim().split(/\s+/).map(t => `${t}~1`).join(' ');
+        const fuzzyQuery = query
+          .trim()
+          .split(/\s+/)
+          .map((t) => `${t}~1`)
+          .join(' ');
         results = this.index.search(fuzzyQuery);
       }
 
-      return results
-        .map(r => this.gamesMap.get(r.ref))
-        .filter((g): g is Game => g !== undefined);
+      return results.map((r) => this.gamesMap.get(r.ref)).filter((g): g is Game => g !== undefined);
     } catch {
       return [];
     }

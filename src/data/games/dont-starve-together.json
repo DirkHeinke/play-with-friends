@@ -9,22 +9,10 @@
     "softLimit": true
   },
   "price": 14,
-  "duration": [
-    "long"
-  ],
-  "platforms": [
-    "windows",
-    "macos",
-    "linux"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
-  "tags": [
-    "co-op"
-  ],
-  "controls": [
-    "game-controller"
-  ],
+  "duration": ["long"],
+  "platforms": ["windows", "macos", "linux"],
+  "multiplayerType": ["remote"],
+  "tags": ["co-op"],
+  "controls": ["game-controller"],
   "image": "images/dont-starve-together.webp"
 }

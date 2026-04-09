@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const gamesDir = resolve(__dirname, '../src/data/games');
 
 const files = readdirSync(gamesDir)
-  .filter(f => f.endsWith('.json') && f !== 'index.json')
+  .filter((f) => f.endsWith('.json') && f !== 'index.json')
   .sort();
 
 if (files.length === 0) {

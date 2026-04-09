@@ -16,9 +16,9 @@ const gamesDir = resolve(__dirname, '../src/data/games');
 const outputFile = join(gamesDir, 'index.json');
 
 const games = readdirSync(gamesDir)
-  .filter(f => f.endsWith('.json') && f !== 'index.json')
+  .filter((f) => f.endsWith('.json') && f !== 'index.json')
   .sort()
-  .map(f => JSON.parse(readFileSync(join(gamesDir, f), 'utf8')));
+  .map((f) => JSON.parse(readFileSync(join(gamesDir, f), 'utf8')));
 
 writeFileSync(outputFile, JSON.stringify(games, null, 2) + '\n');
 

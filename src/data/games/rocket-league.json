@@ -9,19 +9,10 @@
     "softLimit": null
   },
   "price": 0,
-  "duration": [
-    "medium"
-  ],
-  "platforms": [
-    "windows"
-  ],
-  "multiplayerType": [
-    "local",
-    "remote"
-  ],
+  "duration": ["medium"],
+  "platforms": ["windows"],
+  "multiplayerType": ["local", "remote"],
   "tags": [],
-  "controls": [
-    "game-controller"
-  ],
+  "controls": ["game-controller"],
   "image": "images/rocket-league.webp"
 }

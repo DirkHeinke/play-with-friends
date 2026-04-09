@@ -9,18 +9,10 @@
     "softLimit": null
   },
   "price": 0,
-  "duration": [
-    "medium"
-  ],
-  "platforms": [
-    "web"
-  ],
-  "multiplayerType": [
-    "remote"
-  ],
-  "tags": [
-    "co-op"
-  ],
+  "duration": ["medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": ["co-op"],
   "controls": [],
   "image": "images/hanab.webp"
 }

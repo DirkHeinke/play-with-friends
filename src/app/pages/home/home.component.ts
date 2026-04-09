@@ -41,9 +41,16 @@ export class HomeComponent implements OnInit {
 
   constructor() {
     this.title.setTitle('Play With Friends - Games for Groups');
-    this.meta.updateTag({ name: 'description', content: 'A curated collection of the best multiplayer games to play with friends — web games, co-op PC games, party games and more.' });
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'A curated collection of the best multiplayer games to play with friends — web games, co-op PC games, party games and more.',
+    });
     this.meta.updateTag({ property: 'og:title', content: 'Play With Friends - Games for Groups' });
-    this.meta.updateTag({ property: 'og:description', content: 'Find the perfect game to play with your friends online or locally.' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Find the perfect game to play with your friends online or locally.',
+    });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
   }
 
@@ -57,7 +64,8 @@ export class HomeComponent implements OnInit {
     if (this.filters.duration.length) params['duration'] = this.filters.duration.join(',');
     if (this.filters.platforms.length) params['platform'] = this.filters.platforms.join(',');
     if (this.filters.price.length) params['price'] = this.filters.price.join(',');
-    if (this.filters.multiplayerType.length) params['type'] = this.filters.multiplayerType.join(',');
+    if (this.filters.multiplayerType.length)
+      params['type'] = this.filters.multiplayerType.join(',');
     if (this.filters.playerCount !== null) params['players'] = String(this.filters.playerCount);
 
     this.plausible.event('Search');

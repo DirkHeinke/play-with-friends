@@ -1,6 +1,14 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { GameFilters, Duration, Platform, PriceLabel, MultiplayerType, Control, getControlLabel } from '../../models/game.model';
+import {
+  GameFilters,
+  Duration,
+  Platform,
+  PriceLabel,
+  MultiplayerType,
+  Control,
+  getControlLabel,
+} from '../../models/game.model';
 
 @Component({
   selector: 'app-filter-bar',
@@ -20,7 +28,15 @@ export class FilterBarComponent {
   getControlLabel = getControlLabel;
 
   emptyFilters(): GameFilters {
-    return { query: '', duration: [], platforms: [], price: [], multiplayerType: [], playerCount: null, controls: [] };
+    return {
+      query: '',
+      duration: [],
+      platforms: [],
+      price: [],
+      multiplayerType: [],
+      playerCount: null,
+      controls: [],
+    };
   }
 
   toggleDuration(d: Duration): void {
@@ -96,6 +112,6 @@ export class FilterBarComponent {
   }
 
   private toggleItem<T>(arr: T[], item: T): T[] {
-    return arr.includes(item) ? arr.filter(i => i !== item) : [...arr, item];
+    return arr.includes(item) ? arr.filter((i) => i !== item) : [...arr, item];
   }
 }

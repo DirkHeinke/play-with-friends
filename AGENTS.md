@@ -39,6 +39,12 @@ npm test                         # ng test
 # Validate all game JSON files against the schema (runs automatically before build)
 npm run validate
 
+# Format all files in-place
+npm run format
+
+# Check formatting without writing changes (used in CI)
+npm run format:check
+
 # Regenerate game index from src/data/games/*.json
 node scripts/generate-index.mjs
 
@@ -52,7 +58,7 @@ npm run generate-sitemap
 npm run serve:ssr:playwithfriends
 ```
 
-**No linter or formatter is configured** (no ESLint, Prettier, or Biome). The TypeScript compiler (`tsc`) via Angular CLI is the only static analysis tool.
+**No linter is configured** (no ESLint or Biome). Formatting is handled by Prettier (`npm run format`, `npm run format:check`). The TypeScript compiler (`tsc`) via Angular CLI is the only static analysis tool.
 
 Validation (`npm run validate`) runs automatically as the first step of `npm run build` and `npm run build:dev`, and as a dedicated CI job on every PR. A PR with an invalid game file will fail before the build runs.
 
@@ -104,14 +110,14 @@ import { GameCardComponent } from '../../components/game-card/game-card.componen
 
 ### Naming Conventions
 
-| Construct | Convention | Example |
-|-----------|-----------|---------|
-| Classes, interfaces, types | `PascalCase` | `GamesService`, `GameFilters` |
-| Methods, properties, variables | `camelCase` | `filteredGames`, `buildIndex` |
-| Component selectors | `kebab-case` with `app-` prefix | `app-game-card` |
-| File names | `kebab-case` | `game-card.component.ts` |
-| Union-type string literals | lowercase | `'short' \| 'medium' \| 'long'` |
-| Private class members | No underscore prefix | `private gamesService = inject(...)` |
+| Construct                      | Convention                      | Example                              |
+| ------------------------------ | ------------------------------- | ------------------------------------ |
+| Classes, interfaces, types     | `PascalCase`                    | `GamesService`, `GameFilters`        |
+| Methods, properties, variables | `camelCase`                     | `filteredGames`, `buildIndex`        |
+| Component selectors            | `kebab-case` with `app-` prefix | `app-game-card`                      |
+| File names                     | `kebab-case`                    | `game-card.component.ts`             |
+| Union-type string literals     | lowercase                       | `'short' \| 'medium' \| 'long'`      |
+| Private class members          | No underscore prefix            | `private gamesService = inject(...)` |
 
 ### Angular Components
 
@@ -150,13 +156,11 @@ Use Angular 17+ **block control flow** — never `*ngIf` / `*ngFor` directives:
 
 ```html
 @if (game.image) {
-  <img [src]="game.image" [alt]="game.title" />
+<img [src]="game.image" [alt]="game.title" />
 } @else {
-  <span class="placeholder">{{ game.title[0] }}</span>
-}
-
-@for (game of filteredGames(); track game.slug) {
-  <app-game-card [game]="game" />
+<span class="placeholder">{{ game.title[0] }}</span>
+} @for (game of filteredGames(); track game.slug) {
+<app-game-card [game]="game" />
 }
 ```
 
@@ -269,7 +273,7 @@ Run `npm run validate` after adding or editing a game file to catch errors local
 - **Services:** `GamesService` — data access and filtering. `SearchService` — Lunr full-text index.
 - **No tests exist** — `angular.json` sets `skipTests: true` for all schematics. The test runner is configured (Karma/Jasmine) but no `.spec.ts` files are present.
 - **No git hooks** — no Husky, lint-staged, or pre-commit scripts.
-- **CI:** `.github/workflows/deploy.yml` — every PR runs `npm run validate` as a blocking `validate` job; push to `master` also runs the full build and deploys to GitHub Pages.
+- **CI:** `.github/workflows/deploy.yml` — every PR runs `npm run format:check` and `npm run validate` as blocking checks; push to `master` also runs the same checks, then the full build and deploys to GitHub Pages.
 
 ---
 

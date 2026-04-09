@@ -67,7 +67,10 @@
   border: 1px solid #1a4a5a;
   background: transparent;
   color: var(--text-muted);
-  transition: border-color var(--transition), color var(--transition), background var(--transition);
+  transition:
+    border-color var(--transition),
+    color var(--transition),
+    background var(--transition);
 }
 
 .chip:hover {
@@ -120,7 +123,9 @@
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text-muted);
-  transition: color var(--transition), border-color var(--transition);
+  transition:
+    color var(--transition),
+    border-color var(--transition);
   align-self: flex-end;
 }
 
