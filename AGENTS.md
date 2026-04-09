@@ -271,9 +271,9 @@ Run `npm run validate` after adding or editing a game file to catch errors local
 
 - **Routing:** Lazy-loaded routes in `app.routes.ts`. SSR render modes in `app.routes.server.ts`.
 - **Services:** `GamesService` — data access and filtering. `SearchService` — Lunr full-text index.
-- **No tests exist** — `angular.json` sets `skipTests: true` for all schematics. The test runner is configured (Karma/Jasmine) but no `.spec.ts` files are present.
+- **E2E tests:** Playwright suite lives in `e2e/`. Run with `npm run e2e`. No unit spec files (Karma/Jasmine runner is configured but unused).
 - **No git hooks** — no Husky, lint-staged, or pre-commit scripts.
-- **CI:** `.github/workflows/deploy.yml` — every PR runs `npm run format:check` and `npm run validate` as blocking checks; push to `master` also runs the same checks, then the full build and deploys to GitHub Pages.
+- **CI:** `.github/workflows/deploy.yml` — every PR runs `npm run format:check` and `npm run validate` as blocking checks, plus a non-blocking `e2e` job that uploads the Playwright report as an artifact; push to `master` also runs the full build and deploys to GitHub Pages.
 
 ---
 
@@ -289,3 +289,11 @@ ng generate component pages/my-page
 
 # Add prerender route if needed in src/app/app.routes.server.ts
 ```
+
+---
+
+## Agent Workflow Rules
+
+- **Always run `npm run format` before declaring a task complete.** This formats all `src/`, `e2e/`, `scripts/`, and config files in place.
+- **New features must be covered by Playwright E2E tests** (`e2e/*.spec.ts`) before declaring a task complete. Run `npm run e2e` to verify the suite passes.
+- Run `npm run e2e:install` once on a new machine to install the Chromium browser binary.
