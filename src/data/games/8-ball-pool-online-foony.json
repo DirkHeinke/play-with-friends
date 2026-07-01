@@ -1,0 +1,18 @@
+{
+  "slug": "8-ball-pool-online-foony",
+  "title": "8-Ball pool online - foony.com",
+  "description": "An 8-ball billiards game. Multiplayer pool in your browser on foony.com. Sink all your balls before the opponent.",
+  "url": "https://foony.com/games/8-ball-pool-online-billiards",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-8ball.webp"
+}

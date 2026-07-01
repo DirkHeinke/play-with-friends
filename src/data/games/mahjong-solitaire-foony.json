@@ -1,0 +1,18 @@
+  {
+  "slug": "mahjong-solitaire-foony",
+  "title": "Mahjong Solitaire - foony.com",
+  "description": "Tile matching game on foony.com. Race for pairs or work together on 5 different variants of Mahjong Solitaire.",
+  "url": "https://foony.com/games/mahjong-solitaire",
+  "players": {
+    "min": 1,
+    "max": 100,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-mahjong.webp"
+}

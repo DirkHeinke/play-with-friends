@@ -1,0 +1,18 @@
+{
+  "slug": "checkers-foony",
+  "title": "Checkers - foony.com",
+  "description": "Play checkers at foony.com, along with four variations: International, Russian, Brazilian, and Canadian!",
+  "url": "https://foony.com/games/checkers",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-checkers.webp"
+}

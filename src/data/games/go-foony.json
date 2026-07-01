@@ -1,0 +1,18 @@
+{
+  "slug": "go-foony",
+  "title": "Go - Foony.com",
+  "description": "The oldest strategy game, surround your opponents pieces on 9x9, 13x13, or even 19x19 size boards.",
+  "url": "https://foony.com/games/go",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-go.webp"
+}

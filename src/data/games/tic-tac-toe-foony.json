@@ -1,0 +1,18 @@
+  {
+  "slug": "tictactoe-foony",
+  "title": "Tic Tac Toe - foony.com",
+  "description": "Classic Tic Tac Toe, with the option to play four or even five in a row on a big board, and 'Tic Tac Toe Ultimate' variants.",
+  "url": "https://foony.com/games/tic-tac-toe",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["local","remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-tictactoe.webp"
+}

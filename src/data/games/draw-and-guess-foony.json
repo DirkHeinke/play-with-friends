@@ -1,0 +1,18 @@
+{
+  "slug": "draw-and-guess",
+  "title": "Draw And Guess - foony.com",
+  "description": "Pictionary-style drawing-and-guessing game for up to 1,000 players in one room: each round, one artist gets a secret word and 80 seconds to sketch it while everyone else types guesses in chat.",
+  "url": "https://foony.com/games/paintjob",
+  "players": {
+    "min": 2,
+    "max": 100,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-draw.webp"
+}

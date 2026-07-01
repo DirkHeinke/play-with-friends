@@ -1,0 +1,18 @@
+{
+  "slug": "spades-foony",
+  "title": "Spades - foony.com",
+  "description": "Classic card game 'Spades' on foony.com, where you guess how many rounds you win, and get the first to 300 points.",
+  "url": "https://foony.com/games/spades",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "softLimit": null
+  },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-spades.webp"
+}

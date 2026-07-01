@@ -1,0 +1,18 @@
+{
+  "slug": "yacht-foony",
+  "title": "Yacht - foony.com",
+  "description": "Yahtzee-style online dice game. Play solo, vs friends, and/or bots, at foony.com",
+  "url": "https://foony.com/games/yacht",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-yacht.webp"
+}

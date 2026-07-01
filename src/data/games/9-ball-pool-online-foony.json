@@ -1,0 +1,18 @@
+{
+  "slug": "9-ball-pool-online-foony",
+  "title": "9-Ball Pool Online - foony.com",
+  "description": "A 9 ball billiars game in your browser at foony.com. Sink the balls consecutively verse a friend and win with the sinking of the nine ball.",
+  "url": "https://foony.com/games/9-ball-pool-online-billiards",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-9ball.webp"
+}
