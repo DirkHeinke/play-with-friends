@@ -1,0 +1,18 @@
+{
+  "slug": "filler",
+  "title": "Filler",
+  "description": "A free online color-flood strategy game for 2 players. Capture the board by claiming adjacent colors before your opponent does — play remotely in your browser.",
+  "url": "https://multiplayergames.app/games/filler",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "softLimit": false
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/filler.webp"
+}
