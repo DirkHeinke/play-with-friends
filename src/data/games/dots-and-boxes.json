@@ -1,0 +1,18 @@
+{
+  "slug": "dots-and-boxes",
+  "title": "Dots & Boxes",
+  "description": "A free online classic pencil-and-paper strategy game for 2 players. Draw lines, complete boxes, and outscore your friend in short remote matches.",
+  "url": "https://multiplayergames.app/games/dots-and-boxes",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "softLimit": false
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/dots-and-boxes.webp"
+}
