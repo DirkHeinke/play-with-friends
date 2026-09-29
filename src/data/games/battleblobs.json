@@ -1,0 +1,18 @@
+{
+  "slug": "battleblobs",
+  "title": "Battleblobs - foony.com",
+  "description": "Head to head, 1v1, battleships style game.",
+  "url": "https://foony.com/games/battleblobs",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": false
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-battleships.webp"
+}

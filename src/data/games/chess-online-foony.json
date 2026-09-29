@@ -1,0 +1,18 @@
+{
+  "slug": "chess-foony",
+  "title": "Chess - foony.com",
+  "description": "Classic Chess Online on foony.com Challenge your friends to this all time classic strategy game of kings.",
+  "url": "https://foony.com/games/chess",
+  "players": {
+    "min": 1,
+    "max": 2,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-chess.webp"
+}

@@ -1,0 +1,18 @@
+  {
+  "slug": "jigsaw-foony",
+  "title": "Jigsaw Puzzle Online - foony.com",
+  "description": "25 to 1000 pieces. Up to 100 players all at once. Co-op with live cursors. A workshop so you can upload your own images or pick someone else's, but with lots of default images if you don't want to.",
+  "url": "https://foony.com/games/jigsaw-puzzle-online",
+  "players": {
+    "min": 1,
+    "max": 100,
+    "softLimit": false
+  },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-jigsaw.webp"
+}

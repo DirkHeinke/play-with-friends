@@ -1,0 +1,18 @@
+    {
+  "slug": "foon-o",
+  "title": "Foon-o",
+  "description": "8 player uno-style free online card game, with friends or bots. Different variants, last one standing, and 'flip' mode.",
+  "url": "https://foony.com/games/foono-online-card-game",
+  "players": {
+    "min": 1,
+    "max": 8,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-foono.webp"
+}

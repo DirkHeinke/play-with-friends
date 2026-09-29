@@ -1,0 +1,18 @@
+{
+  "slug": "sudoku-foony",
+  "title": "Sudoku - foony.com",
+  "description": "An online version of Sudoku with both Co-op and versus on the same board.",
+  "url": "https://foony.com/games/sudoku-online",
+  "players": {
+    "min": 1,
+    "max": 10,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-sudoku.webp"
+}

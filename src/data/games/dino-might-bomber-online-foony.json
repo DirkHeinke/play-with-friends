@@ -1,0 +1,18 @@
+{
+  "slug": "dino-might-bomber-online-foony",
+  "title": "Dino-Might Bomber Online - foony.com",
+  "description": "Bomberman style bomb arena in your browser at foony.com. Face off vs your friends, and/or bots. 8 players.",
+  "url": "https://foony.com/games/dinomight",
+  "players": {
+    "min": 1,
+    "max": 8,
+    "softLimit": true
+  },
+  "price": 0,
+  "duration": ["short"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-dinomight.webp"
+}

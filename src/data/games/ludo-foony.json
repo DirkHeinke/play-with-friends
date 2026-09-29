@@ -1,0 +1,18 @@
+{
+  "slug": "ludo-foony",
+  "title": "Ludo - Foony.com",
+  "description": "A typing racing game where you can choose between numbers, words, snippets of sentences, or completely random.",
+  "url": "https://foony.com/games/typeroyale",
+  "players": {
+    "min": 2,
+    "max": 4,
+    "softLimit": false
+  },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["local", "remote"],
+  "tags": [],
+  "controls": [],
+  "image": "images/foony-ludo.webp"
+}
