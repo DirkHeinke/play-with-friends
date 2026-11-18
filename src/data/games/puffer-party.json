@@ -1,0 +1,18 @@
+{
+  "slug": "puffer-party",
+  "title": "Puffer Party",
+  "description": "A free category game for friends. Type an unused answer that fits the prompt to pass the puffer before its timer runs out. Create a private room and send the invite link for 2–16 players.",
+  "url": "https://pufferparty.org/",
+  "players": {
+    "min": 2,
+    "max": 16,
+    "softLimit": false
+  },
+  "price": 0,
+  "duration": ["short", "medium"],
+  "platforms": ["web"],
+  "multiplayerType": ["remote"],
+  "tags": ["word", "party"],
+  "controls": [],
+  "image": null
+}
